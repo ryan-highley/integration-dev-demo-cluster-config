@@ -1,12 +1,25 @@
-apiVersion: operators.coreos.com/v1alpha1
-kind: Subscription
-metadata:
-  name: rhsso-operator
-  namespace: rhsso
-spec:
-  channel: stable
-  installPlanApproval: Automatic
-  name: rhsso-operator
-  source: redhat-operators
-  sourceNamespace: openshift-marketplace
-  
+---
+- apiVersion: v1
+  kind: Namespace
+  metadata:
+    name: rhsso
+    labels:
+      kubernetes.io/metadata.name: rhsso
+    annotations:
+      openshift.io/description: ''
+      openshift.io/display-name: Red Hat SSO
+  spec:
+    finalizers:
+      - kubernetes
+
+- apiVersion: operators.coreos.com/v1alpha1
+  kind: Subscription
+  metadata:
+    name: rhsso-operator
+    namespace: rhsso
+  spec:
+    channel: stable
+    installPlanApproval: Automatic
+    name: rhsso-operator
+    source: redhat-operators
+    sourceNamespace: openshift-marketplace
