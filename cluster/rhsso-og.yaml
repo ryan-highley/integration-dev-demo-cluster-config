@@ -1,0 +1,8 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: OperatorGroup
+metadata:
+  name: rhsso-group
+  namespace: rhsso
+spec:
+  targetNamespaces:
+    - rhsso
