@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: external-git-repo
+  namespace: default
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 0
+    - name: ssh
+      protocol: TCP
+      port: 2222
+      targetPort: 2222
+      nodePort: 0
+selector: {}

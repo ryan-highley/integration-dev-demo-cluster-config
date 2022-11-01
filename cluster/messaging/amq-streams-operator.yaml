@@ -2,12 +2,12 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   labels:
-    operators.coreos.com/cluster-logging.openshift-logging: ""
-  name: cluster-logging
-  namespace: openshift-logging
+    operators.coreos.com/amq-streams.openshift-operators: ''
+  name: amq-streams
+  namespace: openshift-operators
 spec:
   channel: stable
   installPlanApproval: Automatic
-  name: cluster-logging
+  name: amq-streams
   source: redhat-operators
   sourceNamespace: openshift-marketplace
