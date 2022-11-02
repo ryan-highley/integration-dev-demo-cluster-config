@@ -1,0 +1,5 @@
+resources:
+- openshift-gitops-egress-policy.yaml
+- external-git-repo-service.yaml
+- external-git-repo-endpoints.yaml
+- openshift-gitops-operator.yaml

@@ -2,17 +2,11 @@ kind: Service
 apiVersion: v1
 metadata:
   name: external-git-repo
-  namespace: default
+  namespace: openshift-gitops
 spec:
   ports:
-    - name: http
+    - name: https
       protocol: TCP
       port: 3000
       targetPort: 3000
-      nodePort: 0
-    - name: ssh
-      protocol: TCP
-      port: 2222
-      targetPort: 2222
-      nodePort: 0
 selector: {}

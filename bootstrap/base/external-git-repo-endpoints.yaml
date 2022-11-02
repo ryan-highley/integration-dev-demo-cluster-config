@@ -2,12 +2,10 @@ apiVersion: v1
 kind: Endpoints
 metadata:
   name: external-git-repo
-  namespace: default
+  namespace: openshift-gitops
 subsets:
   - addresses:
-      - ip: 10.0.0.157
+      - ip: 10.0.0.199
     ports:
       - port: 3000
-        name: http
-      - port: 2222
-        name: ssh
+        name: https
