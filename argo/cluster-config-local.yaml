@@ -1,16 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cluster-configs
+  name: cluster-config-local
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: default
     server: https://kubernetes.default.svc
-  project: default
+  project: integration-dev-demo
   source:
     directory:
       recurse: true
-    path: cluster
-    repoURL: http://gogs.gogs.svc/efishent-air/gitops-config
+    path: bootstrap/overlays/local
+    repoURL: https://github.com/ryan-highley/integration-dev-demo-gitops-config.git
     targetRevision: HEAD
