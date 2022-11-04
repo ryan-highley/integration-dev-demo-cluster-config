@@ -6,7 +6,5 @@ resources:
 - rbac.yaml
 - pipelines.yaml
 - messaging.yaml
-- demo-weather-in-app.yaml
-- demo-weather-transform-app.yaml
 #- container-security-operator.yaml
 #- sealed-secrets.yaml
