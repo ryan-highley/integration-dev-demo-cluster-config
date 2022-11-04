@@ -1,3 +1,0 @@
-resources:
-- messaging/amq-broker-operator.yaml
-- messaging/amq-streams-operator.yaml
