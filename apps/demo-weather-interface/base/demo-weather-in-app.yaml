@@ -4,7 +4,7 @@ metadata:
   name: demo-weather-in-app
 spec:
   destination:
-    namespace: demo-weather-interface
+#    namespace: demo-weather-interface
     server: https://kubernetes.default.svc
   project: demo-weather-interface
   source:
