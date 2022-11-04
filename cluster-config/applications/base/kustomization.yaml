@@ -5,6 +5,7 @@ resources:
 - htpass-auth.yaml
 - rbac.yaml
 - pipelines.yaml
+- demo-weather-in-app.yaml
+- demo-weather-transform-app.yaml
 #- container-security-operator.yaml
-#- pricelist-app.yaml
 #- sealed-secrets.yaml

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: pricelist
+  name: demo-weather-interface
 spec:
   clusterResourceWhitelist:
   - group: '*'
@@ -15,6 +15,6 @@ spec:
   - description: Developers get view and sync
     name: developer
     policies:
-    - p, role:developer, applications, get, pricelist/*, allow
-    - p, role:developer, applications, sync, pricelist/*, allow
-    - p, role:developer, projects, get, pricelist, allow
+    - p, role:developer, applications, get, demo-weather-interface/*, allow
+    - p, role:developer, applications, sync, demo-weather-interface/*, allow
+    - p, role:developer, projects, get, demo-weather-interface, allow

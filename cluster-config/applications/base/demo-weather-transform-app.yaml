@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: pricelist-app
+  name: demo-weather-transform-app
 spec:
   destination:
-    namespace: pricelist
+#    namespace: pricelist
     server: https://kubernetes.default.svc
-  project: pricelist
+  project: demo-weather-interface
   source:
-    path: pricelist/
-    repoURL: https://github.com/christianh814/gitops-examples
+    path: demo-weather-transform/
+    repoURL: https://github.com/ryan-highley/demo-weather-interface
     targetRevision: main
   syncPolicy:
     automated:
