@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: demo-weather-transform-app
+  name: demo-weather-interface-app
 spec:
   destination:
-#    namespace: demo-weather-interface
+    namespace: demo-weather-interface
     server: https://kubernetes.default.svc
   project: demo-weather-interface
   source:
-    path: demo-weather-transform/
-    repoURL: https://github.com/ryan-highley/demo-weather-interface
+    path: apps/demo-weather-interface/overlays/default
+    repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
     targetRevision: main
   syncPolicy:
     automated:

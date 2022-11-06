@@ -1,0 +1,28 @@
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemis
+metadata:
+  name: demo-weather-amq-broker
+  application: demo-weather-amq-broker-app
+  namespace: demo-weather-interface
+spec:
+  acceptors:
+    - name: artemis
+      port: 61616
+      protocols: 'CORE,AMQP'
+    - name: amqp
+      port: 5672
+      protocols: AMQP
+  deploymentPlan:
+    image: placeholder
+    size: 1
+    requireLogin: false
+    persistenceEnabled: false
+    journalType: nio
+    messageMigration: false
+    jolokiaAgentEnabled: true
+    managementRBACEnabled: true
+    enableMetricsPlugin: true
+  console:
+    expose: true
+  adminUser: amq
+  adminPassword: amq

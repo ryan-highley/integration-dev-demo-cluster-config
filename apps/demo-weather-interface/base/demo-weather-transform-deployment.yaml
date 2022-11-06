@@ -1,28 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    app.openshift.io/vcs-url: <<unknown>>
-    app.quarkus.io/commit-id: 5879af36f1f4ad1f7c3856e0eb7ef55d001ddf84
-    app.quarkus.io/build-timestamp: 2022-11-04 - 04:15:57 +0000
   labels:
-    app.openshift.io/runtime: quarkus
-    app.kubernetes.io/version: 1.0.0-SNAPSHOT
     app.kubernetes.io/name: demo-weather-transform
+    app.kubernetes.io/version: 1.0.0-SNAPSHOT
+    app.openshift.io/runtime: quarkus
   name: demo-weather-transform
   namespace: demo-weather-interface
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/version: 1.0.0-SNAPSHOT
       app.kubernetes.io/name: demo-weather-transform
+      app.kubernetes.io/version: 1.0.0-SNAPSHOT
   template:
     metadata:
       labels:
-        app.openshift.io/runtime: quarkus
-        app.kubernetes.io/version: 1.0.0-SNAPSHOT
         app.kubernetes.io/name: demo-weather-transform
+        app.kubernetes.io/version: 1.0.0-SNAPSHOT
+        app.openshift.io/runtime: quarkus
     spec:
       containers:
         - command:
@@ -32,10 +28,15 @@ spec:
             - -jar
             - /deployments/quarkus-run.jar
           env:
-            - name: SMALLRYE_CONFIG_LOCATIONS
-              value: /mnt/app-config-map
             - name: JAVA_APP_JAR
-              value: /deployments/quarkus-run.jar
+              value: /deployments/demo-weather-transform-1.0.0-SNAPSHOT-runner.jar
           image: image-registry.openshift-image-registry.svc:5000/demo-weather-interface/demo-weather-transform:1.0.0-SNAPSHOT
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           name: demo-weather-transform
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 512Mi
+            requests:
+              cpu: 250m
+              memory: 64Mi

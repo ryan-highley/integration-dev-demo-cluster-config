@@ -1,0 +1,50 @@
+---
+kind: ActiveMQArtemisAddress
+apiVersion: broker.amq.io/v1beta1
+metadata:
+  name: demo-weather-latest-kdfw-address
+  namespace: demo-weather-interface
+spec:
+  addressName: weather.latest.kdfw
+  queueName: weather.latest.kdfw
+  routingType: multicast
+---
+kind: ActiveMQArtemisAddress
+apiVersion: broker.amq.io/v1beta1
+metadata:
+  name: demo-weather-latest-kokc-address
+  namespace: demo-weather-interface
+spec:
+  addressName: weather.latest.kokc
+  queueName: weather.latest.kokc
+  routingType: multicast
+---
+kind: ActiveMQArtemisAddress
+apiVersion: broker.amq.io/v1beta1
+metadata:
+  name: demo-weather-latest-kmco-address
+  namespace: demo-weather-interface
+spec:
+  addressName: weather.latest.kmco
+  queueName: weather.latest.kmco
+  routingType: multicast
+---
+kind: ActiveMQArtemisAddress
+apiVersion: broker.amq.io/v1beta1
+metadata:
+  name: demo-weather-latest-kphx-address
+  namespace: demo-weather-interface
+spec:
+  addressName: weather.latest.kphx
+  queueName: weather.latest.kphx
+  routingType: multicast
+---
+kind: ActiveMQArtemisAddress
+apiVersion: broker.amq.io/v1beta1
+metadata:
+  name: demo-weather-latest-kbos-address
+  namespace: demo-weather-interface
+spec:
+  addressName: weather.latest.kbos
+  queueName: weather.latest.kbos
+  routingType: multicast
