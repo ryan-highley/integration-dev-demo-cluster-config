@@ -1,0 +1,6 @@
+apiVersion: apps.3scale.net/v1alpha1
+kind: APIManager
+metadata:
+  name: apimanager-sample
+spec:
+  wildcardDomain: apps.cluster-6qxsq.6qxsq.sandbox2273.opentlc.com

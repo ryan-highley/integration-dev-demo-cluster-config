@@ -1,0 +1,3 @@
+- op: replace
+  path: /spec/wildcardDomain
+  value: dev-apps.cluster-6qxsq.6qxsq.sandbox2273.opentlc.com
