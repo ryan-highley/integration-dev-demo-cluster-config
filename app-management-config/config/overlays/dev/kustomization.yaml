@@ -5,5 +5,5 @@ namespace: openshift-gitops
 namePrefix: dev-
 
 bases:
-- ../../../applications/overlays/dev
 - ../../../projects/overlays/dev
+- ../../../applications/overlays/dev
