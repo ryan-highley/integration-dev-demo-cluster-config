@@ -42,6 +42,11 @@ Patch the manifest in order to use Dex and set up the RBAC policy.
 
 ```shell
 oc patch argocd openshift-gitops -n openshift-gitops --type=merge \
+-p='{"spec":{"rbac":{"defaultPolicy":"","policy":"g, system:cluster-admins, role:admin\ng, admins, role:admin\ng, developer, role:developer\ng, marketing, role:marketing\n","scopes":"[groups]"},"server":{"insecure":true,"route":{"enabled":true,"tls":{"insecureEdgeTerminationPolicy":"Redirect","termination":"edge"}}}}}'
+```
+
+```shell
+oc patch argocd openshift-gitops -n openshift-gitops --type=merge \
 -p='{"spec":{"rbac":{"defaultPolicy":"","policy":"g, system:cluster-admins, role:admin\ng, admins, role:admin\ng, developer, role:developer\ng, marketing, role:marketing\n","scopes":"[groups]"},"resourceCustomizations":"bitnami.com/SealedSecret:\n  health.lua: |\n    hs = {}\n    hs.status = \"Healthy\"\n    hs.message = \"Controller doesnt report status\"\n    return hs\nroute.openshift.io/Route:\n  ignoreDifferences: |\n    jsonPointers:\n    - /spec/host\n","server":{"insecure":true,"route":{"enabled":true,"tls":{"insecureEdgeTerminationPolicy":"Redirect","termination":"edge"}}}}}'
 ```
 

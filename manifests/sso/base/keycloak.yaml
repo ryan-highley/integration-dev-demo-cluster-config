@@ -9,8 +9,8 @@ spec:
   externalAccess:
     enabled: true
   keycloakDeploymentSpec:
-    imagePullPolicy: IfNotPresent
+    imagePullPolicy: Always
   postgresDeploymentSpec:
-    imagePullPolicy: IfNotPresent
+    imagePullPolicy: Always
   instances: 1
   disableReplicasSyncing: true
