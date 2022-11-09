@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: config-messaging
+  name: config-sso
 spec:
   destination:
-    namespace: openshift-gitops
+    namespace: rhsso
     server: https://kubernetes.default.svc
   project: cluster-config
   source:

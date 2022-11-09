@@ -11,6 +11,6 @@ spec:
   keycloakDeploymentSpec:
     imagePullPolicy: IfNotPresent
   postgresDeploymentSpec:
-    imagePullPolicy: IIfNotPresent
+    imagePullPolicy: IfNotPresent
   instances: 1
   disableReplicasSyncing: true

@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
 - htpass-auth.yaml
 - rbac.yaml
+- sso.yaml
 - pipelines.yaml
 - messaging.yaml
 #- container-security-operator.yaml
