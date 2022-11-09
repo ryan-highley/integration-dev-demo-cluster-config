@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  labels:
+    app: 3scale-api-management
+    threescale_component: zync
+  name: zync
+  namespace: {{ project_name }}
+stringData:
+  DATABASE_URL: {{ zyncdb_url }}
+  ZYNC_DATABASE_PASSWORD: {{ zyncdb_password }}
+type: Opaque

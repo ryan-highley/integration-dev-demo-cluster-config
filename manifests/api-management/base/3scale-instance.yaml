@@ -1,0 +1,47 @@
+
+apiVersion: apps.3scale.net/v1alpha1
+kind: APIManager
+metadata:
+  name: {{ app_name }}
+  namespace: {{ project_name }}
+spec:
+  imageStreamTagImportInsecure: false
+  resourceRequirementsEnabled: true
+  system:
+    appSpec:
+      replicas: 3
+    database:
+      postgresql: {}
+    fileStorage:
+      persistentVolumeClaim:
+        storageClassName: {{ rwx_storage_class }}
+    redisPersistentVolumeClaim:
+      storageClassName: {{ rwo_storage_class }}
+    sidekiqSpec:
+      replicas: 1
+    sphinxSpec: {}
+  appLabel: 3scale-api-management
+  zync:
+    appSpec:
+      replicas: 3
+    queSpec:
+      replicas: 1
+  backend:
+    cronSpec:
+      replicas: 1
+    listenerSpec:
+      replicas: 3
+    redisPersistentVolumeClaim:
+      storageClassName: {{ rwo_storage_class }}
+    workerSpec:
+      replicas: 3
+  tenantName: {{ tenant_name }}
+  apicast:
+    managementAPI: status
+    openSSLVerify: true 
+    productionSpec:
+      replicas: 3
+    responseCodes: true
+    stagingSpec:
+      replicas: 3
+  wildcardDomain: {{ wildcard_domain }} 

@@ -1,0 +1,13 @@
+apiVersion: v1
+stringData:
+  DB_PASSWORD: {{ sysdb_password }}
+  DB_USER: {{ sysdb_user }}
+  URL: {{ sysdb_url }}
+kind: Secret
+metadata:
+  labels:
+    app: 3scale-api-management
+    threescale_component: system
+  name: system-database
+  namespace: {{ project_name }}
+type: Opaque
