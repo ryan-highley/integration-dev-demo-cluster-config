@@ -1,8 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-resources:
-- dev-3scale-ns.yaml
+bases:
 - ../../base
 
 namespace: dev-3scale
@@ -18,9 +17,3 @@ patchesJson6902:
       kind: APIManager
       name: apimanager-sample
     path: patch-wildcard-domain.yaml
-  - target:
-      version: v1alpha1
-      group: argoproj.io
-      kind: Application
-      name: api-manager-app
-    path: patch-api-manager-app.yaml

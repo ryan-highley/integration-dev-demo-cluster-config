@@ -2,6 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+- demo-weather-interface-ns.yaml
 - demo-weather-kafka-cluster.yaml
 - demo-weather-kafka-topics.yaml
 - demo-weather-amq-broker.yaml

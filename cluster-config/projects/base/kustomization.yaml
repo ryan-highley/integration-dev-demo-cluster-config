@@ -3,4 +3,3 @@ kind: Kustomization
 
 resources:
 - cluster-config-project.yaml
-- demo-weather-interface-project.yaml
