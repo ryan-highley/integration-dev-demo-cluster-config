@@ -7,5 +7,6 @@ resources:
 - sso.yaml
 - pipelines.yaml
 - messaging.yaml
+- api-management.yaml
 #- container-security-operator.yaml
 #- sealed-secrets.yaml
