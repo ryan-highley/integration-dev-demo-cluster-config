@@ -1,23 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: config-sealed-secrets
+  name: config-authentication
 spec:
   destination:
-    namespace: sealed-secrets
+    namespace: openshift-gitops
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: manifests/sealed-secrets/base
+    path: manifests/auth-htpass
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
     targetRevision: main
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    retry:
-      limit: 5
-      backoff:
-        duration: 5s
-        factor: 2
-        maxDuration: 3m

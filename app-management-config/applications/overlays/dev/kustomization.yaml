@@ -10,10 +10,28 @@ patchesJson6902:
       group: argoproj.io
       kind: Application
       name: 3scale-app
-    path: patch-3scale-app.yaml
+    patch: |-
+      - op: replace
+        path: /spec/destination/namespace
+        value: dev-3scale
+      - op: replace
+        path: /spec/project
+        value: dev-api-manager
+      - op: replace
+        path: /spec/source/path
+        value: apps/api-manager/overlays/dev
   - target:
       version: v1alpha1
       group: argoproj.io
       kind: Application
       name: demo-weather-interface-app
-    path: patch-demo-weather-interface-app.yaml
+    patch: |-
+      - op: replace
+        path: /spec/destination/namespace
+        value: dev-demo-weather-interface
+      - op: replace
+        path: /spec/project
+        value: dev-demo-weather-interface
+      - op: replace
+        path: /spec/source/path
+        value: apps/demo-weather-interface/overlays/dev
