@@ -2,7 +2,6 @@ apiVersion: broker.amq.io/v1beta1
 kind: ActiveMQArtemis
 metadata:
   name: demo-weather-amq-broker
-  application: demo-weather-amq-broker-app
   namespace: demo-weather-interface
 spec:
   acceptors:
@@ -26,3 +25,4 @@ spec:
     expose: true
   adminUser: amq
   adminPassword: amq
+  version: 7.11.1
