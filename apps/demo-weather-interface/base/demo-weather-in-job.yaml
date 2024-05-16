@@ -28,7 +28,7 @@ spec:
               value: /deployments/demo-weather-in-1.0.0-SNAPSHOT-runner.jar
             - name: WEATHER_STATION
               value: kdfw
-          image: image-registry.openshift-image-registry.svc:5000/demo-weather-interface/demo-weather-in:1.0.0-SNAPSHOT
+          image: image-registry.openshift-image-registry.svc:5000/demo-weather-interface/demo-weather-in:1.0
           imagePullPolicy: IfNotPresent
           name: demo-weather-in
           resources:
