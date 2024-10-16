@@ -1,41 +1,50 @@
-apiVersion: batch/v1
-kind: Job
+---
+apiVersion: v1
+kind: ConfigMap
 metadata:
+  name: demo-weather-in-config
+data:
+  weather-station: kphx
+  kafka-bootstrap-host: demo-weather-kafka-cluster-kafka-bootstrap.dev-demo-weather-interface.svc:9092
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: demo-weather-in
   labels:
     app.kubernetes.io/name: demo-weather-in
-    app.kubernetes.io/version: 1.0.0-SNAPSHOT
+    app.kubernetes.io/version: "1.0"
+    app.kubernetes.io/part-of: demo-weather-interface
     app.openshift.io/runtime: quarkus
-  name: demo-weather-in-job
-  namespace: demo-weather-interface
 spec:
-  selector: {}
-  template:
-    metadata:
-      labels:
-        app.kubernetes.io/name: demo-weather-in
-        app.kubernetes.io/version: 1.0.0-SNAPSHOT
-        app.openshift.io/runtime: quarkus
+  schedule: 58 * * * ?
+  concurrencyPolicy: Replace
+  jobTemplate:
     spec:
-      containers:
-        - command:
-            - java
-            - -Dquarkus.http.host=0.0.0.0
-            - -Djava.util.logging.manager=org.jboss.logmanager.LogManager
-            - -jar
-            - /deployments/quarkus-run.jar
-          env:
-            - name: JAVA_APP_JAR
-              value: /deployments/demo-weather-in-1.0.0-SNAPSHOT-runner.jar
-            - name: WEATHER_STATION
-              value: kdfw
-          image: image-registry.openshift-image-registry.svc:5000/demo-weather-interface/demo-weather-in:1.0
-          imagePullPolicy: IfNotPresent
-          name: demo-weather-in
-          resources:
-            limits:
-              cpu: 1000m
-              memory: 512Mi
-            requests:
-              cpu: 250m
-              memory: 64Mi
-      restartPolicy: Never
+      template:
+        metadata:
+          labels:
+            app.kubernetes.io/name: demo-weather-in
+            app.kubernetes.io/version: "1.0"
+            app.openshift.io/runtime: quarkus
+            app.kubernetes.io/part-of: demo-weather-interface
+        spec:
+          containers:
+            - name: demo-weather-in
+              image: image-registry.openshift-image-registry.svc:5000/demo-weather-interface/demo-weather-in:1.0
+              envFrom:
+                - configMapRef:
+                    name: demo-weather-in-config
+                    optional: false
+              imagePullPolicy: IfNotPresent
+              resources:
+                limits:
+                  cpu: 250m
+                  memory: 64Mi
+                requests:
+                  cpu: 125m
+                  memory: 16Mi
+          serviceAccountName: demo-weather-in
+          serviceAccount: demo-weather-in
+          restartPolicy: Never
+          securityContext: {}

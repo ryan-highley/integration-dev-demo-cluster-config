@@ -7,5 +7,5 @@ resources:
 - demo-weather-kafka-topics.yaml
 - demo-weather-amq-broker.yaml
 - demo-weather-amq-topics.yaml
-# - demo-weather-in-job.yaml
-# - demo-weather-transform-deployment.yaml
+- demo-weather-in-job.yaml
+- demo-weather-transform-deployment.yaml
