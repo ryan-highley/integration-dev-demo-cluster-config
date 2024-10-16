@@ -5,7 +5,7 @@ resources:
 - ../../base
 
 namespace: dev-demo-weather-interface
-namePrefix: dev-
+# namePrefix: dev-
 
 commonLabels:
   variant: DEV
