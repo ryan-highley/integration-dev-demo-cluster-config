@@ -15,3 +15,5 @@ images:
   newName: image-registry.openshift-image-registry.svc:5000/dev-demo-weather-interface/demo-weather-in
 - name: image-registry.openshift-image-registry.svc:5000/demo-weather-interface/demo-weather-transform:1.0
   newName: image-registry.openshift-image-registry.svc:5000/dev-demo-weather-interface/demo-weather-transform
+- name: image-registry.openshift-image-registry.svc:5000/demo-weather-interface/demo-weather-sparkplug:1.0
+  newName: image-registry.openshift-image-registry.svc:5000/dev-demo-weather-interface/demo-weather-sparkplug

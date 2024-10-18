@@ -4,7 +4,7 @@ kind: ConfigMap
 metadata:
   name: demo-weather-sparkplug-config
 data:
-  mqtt-servers: tcp://hivemq.dev-demo-weather-interface.svc:1883
+  mqtt-servers: dev-hivemq:tcp://hivemq.dev-demo-weather-interface.svc:1883
   kafka-bootstrap-host: demo-weather-kafka-cluster-kafka-bootstrap.dev-demo-weather-interface.svc:9092
 ---
 apiVersion: apps/v1
