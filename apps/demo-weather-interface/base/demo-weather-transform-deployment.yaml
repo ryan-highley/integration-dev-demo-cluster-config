@@ -40,12 +40,10 @@ spec:
           imagePullPolicy: IfNotPresent
           resources:
             limits:
-              cpu: 1000m
+              cpu: '1'
               memory: 512Mi
             requests:
               cpu: 250m
               memory: 64Mi
-          serviceAccountName: demo-weather-transform
-          serviceAccount: demo-weather-transform
           securityContext: {}
 
