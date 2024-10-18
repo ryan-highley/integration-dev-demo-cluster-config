@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ignition
+    app.kubernetes.io/component: ignition
+    app.kubernetes.io/instance: ignition
+    app.kubernetes.io/name: ignition
+    app.kubernetes.io/part-of: ignition-app
+    app.openshift.io/runtime: shadowman
+    app.openshift.io/runtime-namespace: dev-ignition
+  name: ignition
+  namespace: dev-ignition
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ignition
+  template:
+    metadata:
+      labels:
+        app: ignition
+        deployment: ignition
+    spec:
+      containers:
+      - args:
+        - -n
+        - camel-tahu-test
+        env:
+        - name: TZ
+          value: US/Central
+        - name: ACCEPT_IGNITION_EULA
+          value: "Y"
+        - name: GATEWAY_ADMIN_USERNAME
+          value: rhighley@redhat.com
+        - name: GATEWAY_ADMIN_PASSWORD
+          value: r3dh4t1!
+        - name: IGNITION_EDITION
+          value: standard
+        - name: DISABLE_QUICKSTART
+          value: "Y"
+        image: image-registry.openshift-image-registry.svc:5000/dev-ignition/ignition@sha256:7ded7f915eca2ddd300c02b54b4835a7d37aba9bda04f2d5c7fb916bde859d67
+        imagePullPolicy: IfNotPresent
+        name: ignition
+        ports:
+        - containerPort: 8088
+          protocol: TCP
+        - containerPort: 1883
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: ignition-runner
+      serviceAccountName: ignition-runner
+      terminationGracePeriodSeconds: 30

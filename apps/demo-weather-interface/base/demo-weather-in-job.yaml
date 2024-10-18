@@ -17,7 +17,7 @@ metadata:
     app.kubernetes.io/part-of: demo-weather-interface
     app.openshift.io/runtime: quarkus
 spec:
-  schedule: 58 * * * ?
+  schedule: 0/5 * * * ?
   concurrencyPolicy: Replace
   jobTemplate:
     spec:
@@ -44,7 +44,5 @@ spec:
                 requests:
                   cpu: 125m
                   memory: 16Mi
-          serviceAccountName: demo-weather-in
-          serviceAccount: demo-weather-in
           restartPolicy: Never
           securityContext: {}
