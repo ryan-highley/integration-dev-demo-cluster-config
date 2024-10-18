@@ -1,0 +1,57 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: hivemq
+  namespace: dev-demo-weather-interface
+  labels:
+    app: hivemq
+    app.kubernetes.io/component: hivemq
+    app.kubernetes.io/instance: hivemq
+    app.kubernetes.io/name: hivemq
+    app.kubernetes.io/part-of: demo-weather-interface
+    app.openshift.io/runtime: shadowman
+    app.openshift.io/runtime-namespace: dev-demo-weather-interface
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hivemq
+  template:
+    metadata:
+      labels:
+        app: hivemq
+        deployment: hivemq
+    spec:
+      volumes:
+        - name: hivemq-1
+          emptyDir: {}
+        - name: hivemq-2
+          emptyDir: {}
+      containers:
+        - name: hivemq
+          image: 'image-registry.openshift-image-registry.svc:5000/dev-demo-weather-interface/hivemq@sha256:74ee45eeae276b27eb6e4df71a57cc772d696ca8d64f06ce86afd783f5c3725f'
+          ports:
+            - containerPort: 1883
+              protocol: TCP
+            - containerPort: 8000
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 512Mi
+            requests:
+              cpu: 250m
+              memory: 64Mi
+          volumeMounts:
+            - name: hivemq-1
+              mountPath: /opt/hivemq/data
+            - name: hivemq-2
+              mountPath: /opt/hivemq/log
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
