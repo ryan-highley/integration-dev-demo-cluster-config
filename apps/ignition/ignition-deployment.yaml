@@ -32,7 +32,7 @@ spec:
         - name: ACCEPT_IGNITION_EULA
           value: "Y"
         - name: GATEWAY_ADMIN_USERNAME
-          value: rhighley@redhat.com
+          value: rhighley
         - name: GATEWAY_ADMIN_PASSWORD
           value: r3dh4t1!
         - name: IGNITION_EDITION
