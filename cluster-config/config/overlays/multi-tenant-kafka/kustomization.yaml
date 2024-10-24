@@ -8,6 +8,9 @@ resources:
 - ../../../applications/messaging/
 - ../../../applications/apicurio-registry/
 - ../../../applications/cert-manager/
+- ../../../applications/service-mesh/
+- ../../../applications/sso/
+- ../../../applications/vault-secrets/
 
 patches:
   - target:
