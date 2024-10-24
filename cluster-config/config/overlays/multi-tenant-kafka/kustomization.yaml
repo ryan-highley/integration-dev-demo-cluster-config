@@ -5,8 +5,10 @@ namespace: openshift-gitops
 
 resources:
 - ../../../projects/
+- ../../../applications/cluster-config/
 - ../../../applications/messaging/
 - ../../../applications/apicurio-registry/
+- ../../../applications/cert-manager/
 
 patches:
   - target:
@@ -17,12 +19,4 @@ patches:
     patch: |-
       - op: replace
         path: /spec/source/path
-        value: cluster-config/config/overlays/reorg-testing/
-  - target:
-      version: v1alpha1
-      group: argoproj.io
-      kind: Application
-    patch: |-
-      - op: replace
-        path: /spec/source/targetRevision
-        value: reorg
+        value: cluster-config/config/overlays/multi-tenant-kafka/
