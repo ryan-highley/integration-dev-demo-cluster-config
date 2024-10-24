@@ -6,3 +6,14 @@ namespace: openshift-gitops
 resources:
 - ../../../projects/
 - ../../../applications/messaging/
+
+patches:
+  - target:
+      version: v1alpha1
+      group: argoproj.io
+      kind: Application
+      name: cluster-config
+    patch: |-
+      - op: replace
+        path: /spec/source/path
+        value: cluster-config/config/overlays/rtr-service-mesh/

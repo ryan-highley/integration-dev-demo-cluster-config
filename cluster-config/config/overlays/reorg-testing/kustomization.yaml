@@ -13,6 +13,15 @@ patches:
       version: v1alpha1
       group: argoproj.io
       kind: Application
+      name: cluster-config
+    patch: |-
+      - op: replace
+        path: /spec/source/path
+        value: cluster-config/config/overlays/reorg-testing/
+  - target:
+      version: v1alpha1
+      group: argoproj.io
+      kind: Application
     patch: |-
       - op: replace
         path: /spec/source/targetRevision
