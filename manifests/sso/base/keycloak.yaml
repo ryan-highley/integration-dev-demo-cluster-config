@@ -4,7 +4,6 @@ metadata:
   labels:
     app: sso
   name: rhsso
-  namespace: rhsso
 spec:
   externalAccess:
     enabled: true
