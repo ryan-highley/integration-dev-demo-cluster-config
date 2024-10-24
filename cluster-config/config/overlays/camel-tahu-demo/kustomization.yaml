@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: openshift-gitops
 
 resources:
-- ../../../projects/
+- ../../base/
 - ../../../applications/messaging/
 
 patches:
@@ -17,3 +17,6 @@ patches:
       - op: replace
         path: /spec/source/path
         value: cluster-config/config/overlays/camel-tahu-demo/
+      - op: replace
+        path: /metadata/name
+        value: camel-tahu-demo-cluster-config

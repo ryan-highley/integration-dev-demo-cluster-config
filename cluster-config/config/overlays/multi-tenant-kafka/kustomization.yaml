@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: openshift-gitops
 
 resources:
-- ../../../projects/
+- ../../base/
 - ../../../applications/cluster-config/
 - ../../../applications/messaging/
 - ../../../applications/apicurio-registry/
@@ -20,3 +20,6 @@ patches:
       - op: replace
         path: /spec/source/path
         value: cluster-config/config/overlays/multi-tenant-kafka/
+      - op: replace
+        path: /metadata/name
+        value: multi-tenant-kafka-cluster-config
