@@ -6,6 +6,10 @@ namespace: openshift-gitops
 resources:
 - ../../../projects/
 - ../../../applications/messaging/
+- ../../../applications/cockroachdb/
+- ../../../applications/edb/
+- ../../../applications/service-mesh/
+- ../../../applications/vault-secrets/
 
 patches:
   - target:
