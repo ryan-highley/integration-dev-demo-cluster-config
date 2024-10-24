@@ -4,5 +4,4 @@ kind: Kustomization
 namespace: openshift-gitops
 
 resources:
-- ../../../projects/
-- ../../../applications/messaging/
+- container-security-operator.yaml
