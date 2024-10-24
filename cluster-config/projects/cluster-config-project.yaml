@@ -6,6 +6,9 @@ spec:
   clusterResourceWhitelist:
   - group: '*'
     kind: '*'
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
   destinations:
   - namespace: '*'
     server: '*'

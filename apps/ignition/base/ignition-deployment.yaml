@@ -8,9 +8,7 @@ metadata:
     app.kubernetes.io/name: ignition
     app.kubernetes.io/part-of: ignition-app
     app.openshift.io/runtime: shadowman
-    app.openshift.io/runtime-namespace: dev-ignition
   name: ignition
-  namespace: dev-ignition
 spec:
   replicas: 1
   selector:

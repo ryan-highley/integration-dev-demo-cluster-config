@@ -16,4 +16,4 @@ patches:
     patch: |-
       - op: replace
         path: /spec/source/path
-        value: cluster-config/config/overlays/camel-tahu-demo/
+        value: cluster-config/config/overlays/rtr-service-mesh/

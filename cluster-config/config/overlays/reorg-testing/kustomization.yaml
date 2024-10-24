@@ -6,6 +6,7 @@ namespace: openshift-gitops
 resources:
 - ../../../projects/
 - ../../../applications/messaging/
+- ../../../applications/apicurio-registry/
 
 patches:
   - target:
@@ -16,4 +17,12 @@ patches:
     patch: |-
       - op: replace
         path: /spec/source/path
-        value: cluster-config/config/overlays/camel-tahu-demo/
+        value: cluster-config/config/overlays/reorg-testing/
+  - target:
+      version: v1alpha1
+      group: argoproj.io
+      kind: Application
+    patch: |-
+      - op: replace
+        path: /spec/source/targetRevision
+        value: reorg

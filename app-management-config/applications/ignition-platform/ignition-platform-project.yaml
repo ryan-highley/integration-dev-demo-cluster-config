@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: ignition-platform
+spec:
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  destinations:
+  - namespace: '*'
+    server: '*'
+  sourceRepos:
+  - '*'
+  roles:
+  - description: Developers get view and sync
+    name: developer
+    policies:
+    - p, role:developer, applications, get, demo-weather-interface/*, allow
+    - p, role:developer, applications, sync, demo-weather-interface/*, allow
+    - p, role:developer, projects, get, demo-weather-interface, allow

@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: 3scale-app
+spec:
+  destination:
+    namespace: 3scale
+    server: https://kubernetes.default.svc
+  project: api-manager
+  source:
+    path: apps/api-manager/overlays/dev
+    repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

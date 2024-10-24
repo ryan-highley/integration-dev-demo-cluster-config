@@ -1,15 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: 3scale-app
-  namespace: openshift-gitops
+  name: cluster-config
 spec:
   destination:
-    namespace: 3scale
+    namespace: openshift-gitops
     server: https://kubernetes.default.svc
-  project: api-manager
+  project: cluster-config
   source:
-    path: apps/api-manager/overlays/dev
+    path: cluster-config/config/overlays/default/
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
     targetRevision: main
   syncPolicy:
