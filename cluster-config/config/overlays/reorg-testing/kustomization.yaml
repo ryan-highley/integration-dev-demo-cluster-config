@@ -6,6 +6,7 @@ namespace: openshift-gitops
 resources:
 - ../../../projects/
 - ../../../applications/messaging/
+- ../../../applications/apicurio-registry/
 
 patches:
   - target:
