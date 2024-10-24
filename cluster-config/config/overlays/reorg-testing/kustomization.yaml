@@ -7,12 +7,11 @@ resources:
 - ../../../projects/
 - ../../../applications/messaging/
 
-patchesJson6902:
+patches:
   - target:
       version: v1alpha1
       group: argoproj.io
       kind: Application
-      name: '*'
     patch: |-
       - op: replace
         path: /spec/source/targetRevision
