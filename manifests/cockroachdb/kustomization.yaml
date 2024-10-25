@@ -1,4 +1,2 @@
-namespace: openshift-gitops
-
 resources:
 - cockroachdb-subscription.yaml

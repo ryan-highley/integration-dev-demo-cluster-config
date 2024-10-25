@@ -1,4 +1,2 @@
-namespace: openshift-gitops
-
 resources:
 - vault-secrets.yaml
