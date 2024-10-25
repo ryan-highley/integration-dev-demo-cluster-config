@@ -1,4 +1,3 @@
 resources:
-- service-mesh-subscription.yaml
-- kiali-subscription.yaml
-- tempo-subscription.yaml
+- Subscription_servicemeshoperator.yaml
+- Subscription_kiali-ossm.yaml

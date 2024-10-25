@@ -1,0 +1,7 @@
+resources:
+- Project_openshift-tempo-operator.yaml
+- OperatorGroup_openshift-tempo-operator.yaml
+- Subscription_openshift-tempo-operator.yaml
+- Project_openshift-opentelemetry-operator.yaml
+- OperatorGroup_openshift-opentelemetry-operator.yaml
+- Subscription_opentelemetry-product.yaml
