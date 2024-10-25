@@ -12,6 +12,15 @@ First apply the `Subscription` manifest. Since this repo uses DEX, we'll need to
 
 ```shell
 cat <<EOF | oc apply -f -
+---
+kind: Project
+apiVersion: project.openshift.io/v1
+metadata:
+  name: openshift-gitops-operator
+  labels:
+    kubernetes.io/metadata.name: openshift-gitops-operator
+    openshift.io/cluster-monitoring: 'true'
+---
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
@@ -25,6 +34,7 @@ spec:
   name: openshift-gitops-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace
+---
 EOF
 ```
 
