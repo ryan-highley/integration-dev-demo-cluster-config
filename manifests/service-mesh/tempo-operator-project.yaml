@@ -1,0 +1,7 @@
+kind: Project
+apiVersion: project.openshift.io/v1
+metadata:
+  name: openshift-tempo-operator
+  labels:
+    kubernetes.io/metadata.name: openshift-tempo-operator
+    openshift.io/cluster-monitoring: 'true'
