@@ -4,4 +4,6 @@ kind: Kustomization
 namespace: openshift-gitops
 
 resources:
-- ../../base/
+- ../../applications/cert-manager/
+- ../../applications/sso/
+- ../../applications/kafka/

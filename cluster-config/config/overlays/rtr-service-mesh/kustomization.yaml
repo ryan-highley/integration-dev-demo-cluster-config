@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: openshift-gitops
 
 resources:
-- ../../base/
+- ../default/
 - ../../../applications/messaging/
 - ../../../applications/cockroachdb/
 - ../../../applications/edb/
@@ -18,9 +18,6 @@ patches:
       kind: Application
       name: cluster-config
     patch: |-
-      - op: replace
-        path: /spec/source/path
-        value: cluster-config/config/overlays/rtr-service-mesh/
       - op: replace
         path: /metadata/name
         value: rtr-service-mesh-cluster-config

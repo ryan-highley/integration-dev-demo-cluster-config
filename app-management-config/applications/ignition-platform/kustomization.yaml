@@ -4,5 +4,5 @@ kind: Kustomization
 namespace: openshift-gitops
 
 resources:
-- demo-weather-interface-project.yaml
-- demo-weather-interface-app.yaml
+- ignition-platform-project.yaml
+- ignition-platform-app.yaml

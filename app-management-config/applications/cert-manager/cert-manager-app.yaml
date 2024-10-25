@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cert-manager-app
+spec:
+  destination:
+    namespace: cert-manager
+    server: https://kubernetes.default.svc
+  project: cert-manager
+  source:
+    path: apps/cert-manager/overlays/default
+    repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

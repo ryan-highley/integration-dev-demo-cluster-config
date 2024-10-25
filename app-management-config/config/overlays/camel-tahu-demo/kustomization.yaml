@@ -8,12 +8,12 @@ resources:
 - ../../../applications/demo-weather-interface/
 - ../../../applications/ignition-platform/
 
-patchesJson6902:
+patches:
   - target:
       version: v1alpha1
       group: argoproj.io
       kind: Application
-      name: demo-weather-interface-app
+      name: ignition-platform-app
     patch: |-
       - op: replace
         path: /spec/destination/namespace
@@ -23,4 +23,4 @@ patchesJson6902:
         value: dev-demo-weather-interface
       - op: replace
         path: /spec/source/path
-        value: apps/demo-weather-interface/overlays/dev
+        value: apps/demo-weather-interface/overlays/camel-tahu-demo
