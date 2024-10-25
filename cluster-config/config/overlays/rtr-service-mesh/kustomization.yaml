@@ -20,3 +20,11 @@ patches:
       - op: replace
         path: /metadata/name
         value: rtr-service-mesh-cluster-config
+  - target:
+      version: v1alpha1
+      group: argoproj.io
+      kind: Application
+    patch: |-
+      - op: replace
+        path: /spec/project
+        value: rtr-service-mesh-cluster-config

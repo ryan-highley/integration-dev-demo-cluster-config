@@ -16,3 +16,11 @@ patches:
       - op: replace
         path: /metadata/name
         value: camel-tahu-demo-cluster-config
+  - target:
+      version: v1alpha1
+      group: argoproj.io
+      kind: Application
+    patch: |-
+      - op: replace
+        path: /spec/project
+        value: camel-tahu-demo-cluster-config
