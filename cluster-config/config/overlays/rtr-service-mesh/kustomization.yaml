@@ -28,3 +28,6 @@ patches:
       - op: replace
         path: /spec/project
         value: rtr-service-mesh-cluster-config
+      - op: replace
+        path: /spec/source/path
+        value: cluster-config/config/overlays/rtr-service-mesh/

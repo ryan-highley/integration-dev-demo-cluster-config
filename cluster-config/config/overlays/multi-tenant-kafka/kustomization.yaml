@@ -29,3 +29,6 @@ patches:
       - op: replace
         path: /spec/project
         value: multi-tenant-kafka-cluster-config
+      - op: replace
+        path: /spec/source/path
+        value: cluster-config/config/overlays/multi-tenant-kafka/
