@@ -1,0 +1,10 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: tempo-disable-mtls
+  namespace: tracing-system
+spec:
+  host: "*.tracing-system.svc.cluster.local"
+  trafficPolicy:
+    tls:
+      mode: DISABLE

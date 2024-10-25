@@ -1,0 +1,10 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: otel-disable-mtls
+  namespace: istio-system
+spec:
+  host: otel-collector.istio-system.svc.cluster.local
+  trafficPolicy:
+    tls:
+      mode: DISABLE
