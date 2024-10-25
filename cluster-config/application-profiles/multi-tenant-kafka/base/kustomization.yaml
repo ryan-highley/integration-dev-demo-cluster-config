@@ -2,9 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 namespace: openshift-gitops
+namePrefix: multi-tenant-kafka-
 
 resources:
-- ../default/
+- ../../default/base/
 - ../../../applications/messaging/
 - ../../../applications/apicurio-registry/
 - ../../../applications/cert-manager/
@@ -16,19 +17,8 @@ patches:
   - target:
       version: v1alpha1
       group: argoproj.io
-      name: cluster-config
-    patch: |-
-      - op: replace
-        path: /metadata/name
-        value: multi-tenant-kafka-cluster-config
-  - target:
-      version: v1alpha1
-      group: argoproj.io
       kind: Application
     patch: |-
       - op: replace
         path: /spec/project
         value: multi-tenant-kafka-cluster-config
-      - op: replace
-        path: /spec/source/path
-        value: cluster-config/config/overlays/multi-tenant-kafka/

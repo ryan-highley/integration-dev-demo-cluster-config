@@ -2,9 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 namespace: openshift-gitops
+namePrefix: rtr-service-mesh-
 
 resources:
-- ../default/
+- ../../default/base/
 - ../../../applications/messaging/
 - ../../../applications/cockroachdb/
 - ../../../applications/edb/
@@ -15,19 +16,8 @@ patches:
   - target:
       version: v1alpha1
       group: argoproj.io
-      name: cluster-config
-    patch: |-
-      - op: replace
-        path: /metadata/name
-        value: rtr-service-mesh-cluster-config
-  - target:
-      version: v1alpha1
-      group: argoproj.io
       kind: Application
     patch: |-
       - op: replace
         path: /spec/project
         value: rtr-service-mesh-cluster-config
-      - op: replace
-        path: /spec/source/path
-        value: cluster-config/config/overlays/rtr-service-mesh/

@@ -2,20 +2,13 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 namespace: openshift-gitops
+namePrefix: camel-tahu-demo-
 
 resources:
-- ../default/
+- ../../default/base/
 - ../../../applications/messaging/
 
 patches:
-  - target:
-      version: v1alpha1
-      group: argoproj.io
-      name: cluster-config
-    patch: |-
-      - op: replace
-        path: /metadata/name
-        value: camel-tahu-demo-cluster-config
   - target:
       version: v1alpha1
       group: argoproj.io
@@ -24,6 +17,3 @@ patches:
       - op: replace
         path: /spec/project
         value: camel-tahu-demo-cluster-config
-      - op: replace
-        path: /spec/source/path
-        value: cluster-config/config/overlays/camel-tahu-demo/
