@@ -16,7 +16,6 @@ patches:
   - target:
       version: v1alpha1
       group: argoproj.io
-      kind: Application
       name: cluster-config
     patch: |-
       - op: replace
