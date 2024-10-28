@@ -15,7 +15,7 @@ patches:
     patch: |-
       - op: replace
         path: /spec/project
-        value: rtr-service-mesh
+        value: rtr-app-config-service-mesh
   - target:
       version: v1alpha1
       group: argoproj.io
