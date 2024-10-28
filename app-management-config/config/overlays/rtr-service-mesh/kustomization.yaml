@@ -24,7 +24,7 @@ patches:
     patch: |-
       - op: replace
         path: /spec/destination/namespace
-        value: rtr-service-mesh
+        value: rtr-app-service-mesh
       - op: replace
         path: /spec/source/path
         value: apps/service-mesh/overlays/rtr-service-mesh
@@ -36,7 +36,7 @@ patches:
     patch: |-
       - op: replace
         path: /spec/destination/namespace
-        value: rtr-cdb
+        value: rtr-app-cdb
       - op: replace
         path: /spec/source/path
         value: apps/cockroachdb/overlays/rtr-service-mesh
@@ -48,7 +48,7 @@ patches:
     patch: |-
       - op: replace
         path: /spec/destination/namespace
-        value: rtr-edb
+        value: rtr-app-edb
       - op: replace
         path: /spec/source/path
         value: apps/edb/overlays/rtr-service-mesh
