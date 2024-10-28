@@ -1,5 +1,5 @@
 namespace: openshift-gitops
 
 resources:
-- AppProject_cockroackdb.yaml
-- Application_cockroackdb.yaml
+- AppProject_cockroachdb.yaml
+- Application_cockroachdb.yaml
