@@ -1,0 +1,8 @@
+resources:
+- _Project_tracing-system.yaml
+- TempoMonolithic_default.yaml
+- OpenTelemetryCollector_default.yaml
+- Telemetry_mesh-default.yaml
+- DestinationRule_kiali-disable-mtls.yaml
+- DestinationRule_otel-disable-mtls.yaml
+- DestinationRule_tempo-disable-mtls.yaml

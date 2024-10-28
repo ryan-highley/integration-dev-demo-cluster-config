@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: edb
   source:
-    path: apps/edb/overlays/rtr-service-mesh
+    path: apps/edb/base
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
     targetRevision: main
   syncPolicy:

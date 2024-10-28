@@ -1,0 +1,22 @@
+namespace: rtr-tracing-system
+namePrefix: rtr-
+
+resources:
+- ../../base
+
+patches:
+  - target:
+      kind: ServiceMeshControlPlane
+      group: maistra.io
+      version: v2
+      name: default
+    patch: |-
+      - op: merge
+        path: /spec
+        value: |-
+          meshConfig:
+            extensionProviders:
+              - name: otel
+                opentelemetry:
+                  port: 4317
+                  service: default-collector.istio-system.svc.cluster.local

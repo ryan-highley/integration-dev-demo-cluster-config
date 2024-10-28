@@ -1,0 +1,4 @@
+resources:
+- _Project_istio-system.yaml
+- ServiceMeshControlPlane_default.yaml
+- ServiceMeshMemberRoll_default.yaml

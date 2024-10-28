@@ -1,6 +1,53 @@
 namespace: openshift-gitops
 
 resources:
+- AppProject_rtr-service-mesh.yaml
 - ../../../applications/rtr-service-mesh/
 - ../../../applications/cockroachdb/
 - ../../../applications/edb/
+
+patches:
+  - target:
+      version: v1alpha1
+      group: argoproj.io
+      kind: Application
+    patch: |-
+      - op: replace
+        path: /spec/project
+        value: rtr-service-mesh
+  - target:
+      version: v1alpha1
+      group: argoproj.io
+      kind: Application
+      name: service-mesh
+    patch: |-
+      - op: replace
+        path: /spec/destination/namespace
+        value: rtr-service-mesh
+      - op: replace
+        path: /spec/source/path
+        value: apps/service-mesh/overlays/rtr-service-mesh
+  - target:
+      version: v1alpha1
+      group: argoproj.io
+      kind: Application
+      name: cockroachdb
+    patch: |-
+      - op: replace
+        path: /spec/destination/namespace
+        value: rtr-cdb
+      - op: replace
+        path: /spec/source/path
+        value: apps/cockroachdb/overlays/rtr-service-mesh
+  - target:
+      version: v1alpha1
+      group: argoproj.io
+      kind: Application
+      name: edb
+    patch: |-
+      - op: replace
+        path: /spec/destination/namespace
+        value: rtr-edb
+      - op: replace
+        path: /spec/source/path
+        value: apps/edb/overlays/rtr-service-mesh

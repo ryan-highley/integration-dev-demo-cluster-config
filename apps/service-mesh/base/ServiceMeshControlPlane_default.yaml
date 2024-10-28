@@ -2,7 +2,6 @@ kind: ServiceMeshControlPlane
 apiVersion: maistra.io/v2
 metadata:
   name: default
-  namespace: istio-system
 spec:
   addons:
     grafana:
@@ -11,12 +10,6 @@ spec:
       enabled: true
     prometheus:
       enabled: true
-  meshConfig:
-    extensionProviders:
-      - name: otel
-        opentelemetry:
-          port: 4317
-          service: default-collector.istio-system.svc.cluster.local
   policy:
     type: Istiod
   telemetry:

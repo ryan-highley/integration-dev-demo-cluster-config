@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rtr-service-mesh
+  name: service-mesh
 spec:
   destination:
-    namespace: rtr-service-mesh
+    namespace: service-mesh
     server: https://kubernetes.default.svc
-  project: rtr-service-mesh
+  project: service-mesh
   source:
-    path: apps/rtr-service-mesh/overlays/rtr-service-mesh
+    path: apps/service-mesh/base
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
     targetRevision: main
   syncPolicy:
