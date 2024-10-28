@@ -2,7 +2,7 @@ namespace: openshift-gitops
 
 resources:
 - AppProject_rtr-service-mesh.yaml
-- ../../../applications/rtr-service-mesh/
+- ../../../applications/service-mesh/
 - ../../../applications/cockroachdb/
 - ../../../applications/edb/
 
