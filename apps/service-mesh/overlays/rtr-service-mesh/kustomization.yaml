@@ -1,5 +1,6 @@
-namespace: rtr-app-istio-system
-namePrefix: rtr-app-
+# namespace: rtr-app-istio-system
+# namePrefix: rtr-app-
+namespace: istio-system
 
 resources:
 - ../../base
