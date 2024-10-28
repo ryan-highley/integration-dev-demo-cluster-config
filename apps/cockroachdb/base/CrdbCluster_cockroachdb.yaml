@@ -26,4 +26,4 @@ spec:
   additionalLabels:
     sidecar.istio.io/inject: 'true'
   additionalAnnotations:
-    traffic.sidecar.istio.io/excludeInboundPorts: '24257'
+    traffic.sidecar.istio.io/excludeInboundPorts: '26258'
