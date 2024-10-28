@@ -1,17 +1,16 @@
-kind: ServiceMeshControlPlane
 apiVersion: maistra.io/v2
+kind: ServiceMeshControlPlane
 metadata:
-  name: default
+  name: basic
+  namespace: istio-system
 spec:
+  version: v2.6
+  tracing:
+    type: None
+    sampling: 10000
   addons:
-    grafana:
-      enabled: false
     kiali:
       enabled: true
-    prometheus:
+      name: kiali
+    grafana:
       enabled: true
-  policy:
-    type: Istiod
-  telemetry:
-    type: Istiod
-  version: v2.6

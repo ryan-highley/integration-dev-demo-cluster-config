@@ -1,8 +1,8 @@
 apiVersion: maistra.io/v1
 kind: ServiceMeshMemberRoll
 metadata:
-  name: default
+  name: basic
 spec:
   memberSelectors: 
   - matchLabels: 
-      service-mesh-name: default
+      service-mesh-name: basic

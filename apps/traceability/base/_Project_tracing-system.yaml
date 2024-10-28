@@ -4,4 +4,4 @@ metadata:
   name: tracing-system
   labels:
     openshift.io/cluster-monitoring: "true"
-    service-mesh-name: default
+    service-mesh-name: basic
