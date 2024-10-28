@@ -12,5 +12,7 @@ spec:
   destinations:
   - namespace: 'rtr-*'
     server: '*'
+  - namespace: 'istio-system'
+    server: '*'
   sourceRepos:
   - '*'
