@@ -1,0 +1,5 @@
+namespace: openshift-gitops
+
+resources:
+- AppProject_edb.yaml
+- Application_edb.yaml

@@ -1,5 +1,5 @@
 namespace: openshift-gitops
 
 resources:
-- AppProject_rtr-service-mesh.yaml
-- Application_rtr-service-mesh.yaml
+- AppProject_cockroackdb.yaml
+- Application_cockroackdb.yaml

@@ -1,0 +1,4 @@
+namespacePrefix: rtr-
+
+resources:
+- ../../base

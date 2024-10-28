@@ -6,3 +6,5 @@ resources:
 - ServiceMeshMemberRoll_default.yaml
 # - OpenTelemetryCollector_default.yaml
 # - Telemetry_mesh-default.yaml
+- ../../cockroachdb/overlays/rtr-service-mesh/
+- ../../edb/overlays/rtr-service-mesh/
