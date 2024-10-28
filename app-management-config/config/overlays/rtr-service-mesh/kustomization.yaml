@@ -1,0 +1,6 @@
+namespace: openshift-gitops
+
+resources:
+- ../../../applications/rtr-service-mesh/
+- ../../../applications/cockroachdb/
+- ../../../applications/edb/
