@@ -1,2 +1,4 @@
 resources:
-- cockroachdb-subscription.yaml
+- _Project_cockroachdb.yaml
+- OperatorGroup_cockroachdb.yaml
+- Subscription_cockroachdb-certified.yaml

@@ -18,3 +18,12 @@ patches:
       - op: replace
         path: /spec/project
         value: rtr-service-mesh-cluster-config
+  - target:
+      version: v1alpha1
+      group: argoproj.io
+      kind: Application
+      name: cluster-config
+    patch: |-
+      - op: replace
+        path: /spec/source/path
+        value: cluster-config/projects/rtr-service-mesh/base

@@ -1,0 +1,29 @@
+apiVersion: crdb.cockroachlabs.com/v1alpha1
+kind: CrdbCluster
+metadata:
+  name: cockroachdb
+spec:
+  dataStore:
+    pvc:
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: "60Gi"
+        volumeMode: Filesystem
+  resources:
+    requests:
+      cpu: 500m
+      memory: 2Gi
+    limits:
+      cpu: 2
+      memory: 8Gi
+  tlsEnabled: false
+  image:
+    name: cockroachdb/cockroach:v24.2.3
+  nodes: 3
+  additionalLabels:
+    sidecar.istio.io/inject: true
+  additionalAnnotations:
+    traffic.sidecar.istio.io/excludeInboundPorts: '24257'

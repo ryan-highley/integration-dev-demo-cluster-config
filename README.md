@@ -21,6 +21,14 @@ metadata:
     kubernetes.io/metadata.name: openshift-gitops-operator
     openshift.io/cluster-monitoring: 'true'
 ---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: openshift-gitops-operator
+  namespace: openshift-gitops-operator
+spec:
+  upgradeStrategy: Default
+---
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
