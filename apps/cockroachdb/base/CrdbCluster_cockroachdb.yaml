@@ -1,7 +1,7 @@
 apiVersion: crdb.cockroachlabs.com/v1alpha1
 kind: CrdbCluster
 metadata:
-  name: cockroachdb
+  name: cdb
 spec:
   dataStore:
     pvc:

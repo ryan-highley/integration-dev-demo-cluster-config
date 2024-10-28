@@ -1,0 +1,8 @@
+kind: Project
+apiVersion: project.openshift.io/v1
+metadata:
+  name: cdb
+  labels:
+    kubernetes.io/metadata.name: cdb
+    openshift.io/cluster-monitoring: 'true'
+    service-mesh-name: default

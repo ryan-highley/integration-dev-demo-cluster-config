@@ -1,2 +1,3 @@
 resources:
+- _Project_cdb.yaml
 - CrdbCluster_cockroachdb.yaml

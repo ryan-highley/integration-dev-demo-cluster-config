@@ -1,2 +1,5 @@
+namespace: rtr-edb
+namePrefix: rtr-
+
 resources:
 - ../../base
