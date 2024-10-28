@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgresql-operator-controller-manager-config
+data:
+  INHERITED_ANNOTATIONS: sidecar.istio.io/inject
+  INHERITED_LABELS: service-mesh-name, app, version

@@ -1,2 +1,5 @@
+namespace: openshift-operators
+
 resources:
-- edb-subscription.yaml
+- Subscription_cloud-native-postgresql.yaml
+- ConfigMap_postgresql-operator-controller-manager-config.yaml
