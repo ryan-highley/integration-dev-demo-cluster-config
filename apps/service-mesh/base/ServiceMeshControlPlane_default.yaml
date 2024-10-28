@@ -5,6 +5,11 @@ metadata:
   namespace: istio-system
 spec:
   version: v2.6
+  security:
+    dataPlane:
+      mtls: true
+    controlPlane:
+      mtls: true
   tracing:
     type: None
     sampling: 10000
@@ -13,4 +18,6 @@ spec:
       enabled: true
       name: kiali
     grafana:
+      enabled: true
+    prometheus:
       enabled: true
