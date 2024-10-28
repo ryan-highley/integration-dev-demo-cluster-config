@@ -4,4 +4,4 @@ metadata:
   name: cdb
   labels:
     openshift.io/cluster-monitoring: 'true'
-    # service-mesh-name: basic
+    service-mesh-name: basic
