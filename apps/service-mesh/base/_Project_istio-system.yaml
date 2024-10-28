@@ -3,6 +3,5 @@ apiVersion: project.openshift.io/v1
 metadata:
   name: istio-system
   labels:
-    kubernetes.io/metadata.name: istio-system
     openshift.io/cluster-monitoring: 'true'
     service-mesh-name: default

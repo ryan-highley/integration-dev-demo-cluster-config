@@ -3,6 +3,5 @@ kind: Project
 metadata:
   name: tracing-system
   labels:
-    kubernetes.io/metadata.name: tracing-system
     openshift.io/cluster-monitoring: "true"
     service-mesh-name: default

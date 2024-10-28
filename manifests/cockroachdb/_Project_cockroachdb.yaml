@@ -3,6 +3,5 @@ kind: Project
 metadata:
   name: cockroachdb
   labels:
-    kubernetes.io/metadata.name: cockroachdb
     openshift.io/cluster-monitoring: "true"
     service-mesh-name: default

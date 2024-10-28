@@ -18,7 +18,6 @@ apiVersion: project.openshift.io/v1
 metadata:
   name: openshift-gitops-operator
   labels:
-    kubernetes.io/metadata.name: openshift-gitops-operator
     openshift.io/cluster-monitoring: 'true'
 ---
 apiVersion: operators.coreos.com/v1
