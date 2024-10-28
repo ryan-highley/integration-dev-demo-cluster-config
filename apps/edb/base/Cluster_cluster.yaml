@@ -2,6 +2,13 @@ apiVersion: postgresql.k8s.enterprisedb.io/v1
 kind: Cluster
 metadata:
   name: cluster
+  labels:
+    app: rtr-service-mesh
+    version: '1.0'
+    openshift.io/cluster-monitoring: 'true'
+    service-mesh-name: basic
+  additional:
+    sidecar.istio.io/inject: 'true'
 spec:
   instances: 3
 
