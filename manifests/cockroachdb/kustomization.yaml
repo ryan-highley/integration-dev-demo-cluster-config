@@ -1,4 +1,5 @@
 resources:
-- _Project_cockroachdb.yaml
-- OperatorGroup_cockroachdb.yaml
-- Subscription_cockroachdb-certified.yaml
+# - _Project_cockroachdb.yaml
+# - OperatorGroup_cockroachdb.yaml
+# - Subscription_cockroachdb-certified.yaml
+- Subscription_cockroachdb-certified_openshift-operators.yaml
