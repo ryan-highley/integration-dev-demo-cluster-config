@@ -1,6 +1,5 @@
-namespace: rtr-cdb
-namePrefix: rtr-
-
+namespace: rtr-app-cdb
+namePrefix: rtr-app-
 
 resources:
 - ../../base

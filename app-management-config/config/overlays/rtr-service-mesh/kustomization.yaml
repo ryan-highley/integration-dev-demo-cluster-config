@@ -1,4 +1,5 @@
 namespace: openshift-gitops
+namePrefix: rtr-app-config-
 
 resources:
 - AppProject_rtr-service-mesh.yaml

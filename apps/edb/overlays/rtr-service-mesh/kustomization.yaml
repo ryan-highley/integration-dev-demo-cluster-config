@@ -1,5 +1,5 @@
-namespace: rtr-edb
-namePrefix: rtr-
+namespace: rtr-app-edb
+namePrefix: rtr-app-
 
 resources:
 - ../../base

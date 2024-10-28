@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: rtr-service-mesh
+  name: service-mesh
 spec:
   clusterResourceWhitelist:
   - group: '*'
@@ -10,7 +10,7 @@ spec:
   - group: '*'
     kind: '*'
   destinations:
-  - namespace: '*'
+  - namespace: 'rtr-*'
     server: '*'
   sourceRepos:
   - '*'
