@@ -3,6 +3,6 @@ apiVersion: project.openshift.io/v1
 metadata:
   name: edb
   labels:
-    kubernetes.io/metadata.name: istio-system
+    kubernetes.io/metadata.name: edb
     openshift.io/cluster-monitoring: 'true'
     service-mesh-name: default
