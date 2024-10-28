@@ -1,8 +1,8 @@
 resources:
-- _Project_tracing-system.yaml
-- TempoMonolithic_default.yaml
+# - _Project_tracing-system.yaml
+# - TempoMonolithic_default.yaml
 - _Project_istio-system.yaml
 - ServiceMeshControlPlane_default.yaml
 - ServiceMeshMemberRoll_default.yaml
-- OpenTelemetryCollector_default.yaml
-- Telemetry_mesh-default.yaml
+# - OpenTelemetryCollector_default.yaml
+# - Telemetry_mesh-default.yaml
