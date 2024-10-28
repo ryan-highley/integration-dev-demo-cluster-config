@@ -4,7 +4,7 @@ metadata:
   name: edb
 spec:
   destination:
-    namespace: streams-platform
+    namespace: edb
     server: https://kubernetes.default.svc
   project: edb
   source:

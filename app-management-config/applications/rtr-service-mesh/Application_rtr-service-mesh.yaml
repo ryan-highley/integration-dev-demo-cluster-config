@@ -4,7 +4,7 @@ metadata:
   name: rtr-service-mesh
 spec:
   destination:
-    namespace: streams-platform
+    namespace: rtr-service-mesh
     server: https://kubernetes.default.svc
   project: rtr-service-mesh
   source:
