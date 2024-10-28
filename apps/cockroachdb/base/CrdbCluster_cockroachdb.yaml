@@ -24,6 +24,6 @@ spec:
     name: cockroachdb/cockroach:v24.2.3
   nodes: 3
   additionalLabels:
-    sidecar.istio.io/inject: true
+    sidecar.istio.io/inject: 'true'
   additionalAnnotations:
     traffic.sidecar.istio.io/excludeInboundPorts: '24257'
