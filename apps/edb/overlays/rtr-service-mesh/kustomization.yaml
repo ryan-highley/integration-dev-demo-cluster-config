@@ -11,8 +11,6 @@ patches:
       kind: VirtualService
       name: cluster-ingress-vs
     patch: |-
-      - op: remove
-        path: /spec/gateways/0
-      - op: add
+      - op: replace
         path: /spec/gateways/0
         value: rtr-app-cluster-ingress-gw
