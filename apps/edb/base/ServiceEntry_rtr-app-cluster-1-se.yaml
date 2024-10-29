@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata:
+  name: rtr-app-cluster-1-se
+spec:
+  hosts:
+    - rtr-app-cluster-1.rtr-app-edb.svc
+  ports:
+    - number: 8000
+      name: https-8000
+      protocol: HTTPS
+    - number: 9187
+      name: https-9187
+      protocol: HTTPS
+  location: MESH_INTERNAL
+  resolution: DNS
