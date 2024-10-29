@@ -12,5 +12,5 @@ patches:
       name: rtr-app-cluster-ingress-vs
     patch: |-
       - op: replace
-        path: /spec/gateways
-        value: [ "rtr-app-cluster-ingress-gw" ]
+        path: /spec/gateways/0
+        value: rtr-app-cluster-ingress-gw
