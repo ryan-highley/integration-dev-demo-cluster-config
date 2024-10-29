@@ -1,0 +1,19 @@
+# apiVersion: networking.istio.io/v1
+# kind: VirtualService
+# metadata:
+#   name: cluster-ingress-vs
+# spec:
+#   hosts:
+#   - "rtr-app-edb/*"
+#   gateways:
+#   - cluster-ingress-gw
+#   tls:
+#   - match:
+#     - port: 8000
+#       sniHosts:
+#       - "*"
+#     route:
+#     - destination:
+#         host: my-nginx
+#         port:
+#           number: 443

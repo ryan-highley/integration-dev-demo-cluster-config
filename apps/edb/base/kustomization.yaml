@@ -1,3 +1,4 @@
 resources:
 - _Project_edb.yaml
 - Cluster_cluster.yaml
+- Gateway_cluster-ingress-gw.yaml
