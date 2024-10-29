@@ -29,4 +29,4 @@ spec:
     version: '1.0'
   additionalAnnotations:
     # traffic.sidecar.istio.io/excludeInboundPorts: '26258'
-    traffic.sidecar.istio.io/excludeOutboundPorts: '26257'
+    traffic.sidecar.istio.io/excludeOutboundPorts: '26258'
