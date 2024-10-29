@@ -19,7 +19,9 @@ spec:
     limits:
       cpu: '2'
       memory: 8Gi
-  tlsEnabled: false
+  tlsEnabled: true
+  additionalArgs:
+    - '--accept-sql-without-tls'
   image:
     name: cockroachdb/cockroach:v24.2.3
   nodes: 3
