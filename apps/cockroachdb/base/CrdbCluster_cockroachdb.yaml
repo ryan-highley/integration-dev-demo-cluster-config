@@ -19,7 +19,7 @@ spec:
     limits:
       cpu: '2'
       memory: 8Gi
-  tlsEnabled: true
+  tlsEnabled: false
   image:
     name: cockroachdb/cockroach:v24.2.3
   nodes: 3
@@ -29,4 +29,3 @@ spec:
     version: '1.0'
   additionalAnnotations:
     traffic.sidecar.istio.io/excludeInboundPorts: '26258'
-    # traffic.sidecar.istio.io/excludeOutboundPorts: '26258'
