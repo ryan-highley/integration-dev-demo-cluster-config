@@ -6,11 +6,33 @@ spec:
   selector:
     istio: ingressgateway
   servers:
-  - port:
-      number: 8000
-      name: https
-      protocol: HTTPS
-    tls:
-      mode: PASSTHROUGH
-    hosts:
-    - "rtr-app-edb/*"
+    - port:
+        number: 9443
+        name: https
+        protocol: HTTPS
+      tls:
+        mode: PASSTHROUGH
+      hosts:
+        - "rtr-app-edb/*"
+    - port:
+        number: 8000
+        name: https
+        protocol: HTTPS
+      tls:
+        mode: PASSTHROUGH
+      hosts:
+        - "rtr-app-edb/*"
+    - port:
+        number: 9187
+        name: https
+        protocol: HTTPS
+      tls:
+        mode: PASSTHROUGH
+      hosts:
+        - "rtr-app-edb/*"
+    - port:
+        number: 8080
+        name: http
+        protocol: HTTP
+      hosts:
+        - "rtr-app-edb/*"

@@ -10,10 +10,10 @@
 #   tls:
 #   - match:
 #     - port: 8000
-#       sniHosts:
-#       - "*"
+#       # sniHosts:
+#       # - "*"
 #     route:
 #     - destination:
-#         host: my-nginx
+#         # host: my-nginx
 #         port:
-#           number: 443
+#           number: 8000
