@@ -28,5 +28,5 @@ spec:
     app: rtr-service-mesh
     version: '1.0'
   additionalAnnotations:
-    traffic.sidecar.istio.io/excludeInboundPorts: '26258'
-    traffic.sidecar.istio.io/excludeOutboundPorts: '26258'
+    # traffic.sidecar.istio.io/excludeInboundPorts: '26258'
+    traffic.sidecar.istio.io/excludeOutboundPorts: '26257'

@@ -9,6 +9,7 @@ metadata:
     service-mesh-name: basic
   annotations:
     sidecar.istio.io/inject: 'true'
+    traffic.sidecar.istio.io/excludeInboundPorts: '8000,9187'
 spec:
   instances: 3
 
