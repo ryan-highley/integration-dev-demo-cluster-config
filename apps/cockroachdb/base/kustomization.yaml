@@ -1,4 +1,4 @@
 resources:
 - _Project_cdb.yaml
 - CrdbCluster_cockroachdb.yaml
-# - ServiceEntry_cockroachdb.yaml
+- ServiceEntry_cockroachdb.yaml

@@ -4,10 +4,13 @@ metadata:
   name: cockroachdb
 spec:
   hosts:
-  - rtr-app-cdb
+  - rtr-app-cdb.rtr-app-cdb.svc.cluster.local
   location: MESH_INTERNAL
   ports:
   - number: 26257
     name: sql
+    protocol: TCP
+  - number: 8080
+    name: http
     protocol: TCP
   resolution: DNS

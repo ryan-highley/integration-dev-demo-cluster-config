@@ -27,6 +27,5 @@ spec:
     sidecar.istio.io/inject: 'true'
     app: rtr-service-mesh
     version: '1.0'
-  # additionalAnnotations:
-  #   traffic.sidecar.istio.io/includeInboundPorts: '*'
-  #   traffic.sidecar.istio.io/excludeInboundPorts: '26258'
+  additionalAnnotations:
+    traffic.sidecar.istio.io/excludeInboundPorts: '26258'
