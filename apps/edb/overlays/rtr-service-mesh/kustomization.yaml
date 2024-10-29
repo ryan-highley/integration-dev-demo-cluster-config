@@ -9,7 +9,7 @@ patches:
       version: v1beta1
       group: networking.istio.io
       kind: VirtualService
-      name: rtr-app-cluster-ingress-vs
+      name: cluster-ingress-vs
     patch: |-
       - op: remove
         path: /spec/gateways/0
