@@ -11,7 +11,7 @@ spec:
         name: https-8000
         protocol: HTTPS
       hosts:
-        - rtr-app-cluster-1
+        - rtr-app-cluster-1.rtr-app-edb.svc
       tls:
         mode: AUTO_PASSTHROUGH
     - port:
@@ -19,7 +19,7 @@ spec:
         name: https-9187
         protocol: HTTPS
       hosts:
-        - rtr-app-cluster-1
+        - rtr-app-cluster-1.rtr-app-edb.svc
       tls:
         mode: AUTO_PASSTHROUGH
     # - port:
