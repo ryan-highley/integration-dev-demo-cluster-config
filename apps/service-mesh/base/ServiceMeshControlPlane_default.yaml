@@ -10,6 +10,10 @@ spec:
       mtls: true
     controlPlane:
       mtls: true
+    identity:
+      type: ThirdParty
+      thirdParty:
+        audience: istio-ca      
   tracing:
     type: None
     sampling: 10000
