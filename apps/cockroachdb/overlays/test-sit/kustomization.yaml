@@ -1,0 +1,5 @@
+namespace: test-sit-rtr-in-mesh-cdb
+namePrefix: test-sit-rtr-in-mesh-
+
+resources:
+- ../../base
