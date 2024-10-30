@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata:
+  name: edb-cluster-operator-se
+spec:
+  hosts:
+  - "*.rtr-app-edb"
+  location: MESH_INTERNAL
+  ports:
+  - number: 8000
+    name: https-8000
+    protocol: HTTPS
+  - number: 9187
+    name: https-9187
+    protocol: HTTPS
+  resolution: NONE
