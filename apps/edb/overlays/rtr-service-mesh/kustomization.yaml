@@ -7,6 +7,14 @@ resources:
 - ../../../../manifests/edb
 
 patches:
+  - target:
+      version: v1
+      kind: ConfigMap
+      name: postgresql-operator-controller-manager-config
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: postgresql-operator-controller-manager-config
   # - target:
   #     version: v1beta1
   #     group: networking.istio.io
@@ -22,12 +30,12 @@ patches:
   #   patch: |-
   #     - op: remove
   #       path: /metadata/namespace
-  - target:
-      version: v1
-      group: postgresql.k8s.enterprisedb.io
-      kind: Pooler
-      name: cluster-pooler
-    patch: |-
-      - op: replace
-        path: /spec/cluster/name
-        value: rtr-app-cluster
+  # - target:
+  #     version: v1
+  #     group: postgresql.k8s.enterprisedb.io
+  #     kind: Pooler
+  #     name: cluster-pooler
+  #   patch: |-
+  #     - op: replace
+  #       path: /spec/cluster/name
+  #       value: rtr-app-cluster
