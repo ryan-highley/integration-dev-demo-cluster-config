@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: postgresql-operator-controller-manager-config
 data:
-  INHERITED_ANNOTATIONS: sidecar.istio.io/inject, traffic.sidecar.istio.io/excludeInboundPorts, traffic.sidecar.istio.io/excludeOutboundPorts
-  INHERITED_LABELS: service-mesh-name, app, version
+  INHERITED_ANNOTATIONS: 'sidecar.istio.io/*, traffic.sidecar.istio.io/*'
+  INHERITED_LABELS: 'service-mesh-name, app, version'
