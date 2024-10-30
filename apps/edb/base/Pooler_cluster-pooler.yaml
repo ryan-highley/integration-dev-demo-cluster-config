@@ -7,7 +7,8 @@ metadata:
     version: '1.0'
     openshift.io/cluster-monitoring: 'true'
 spec:
-  cluster: cluster
+  cluster:
+    name: cluster
 
   template:
     metadata:
