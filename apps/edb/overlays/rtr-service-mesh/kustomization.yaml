@@ -3,6 +3,7 @@ namePrefix: rtr-app-
 
 resources:
 - ../../base
+- OperatorGroup_cloud-native-postgresql.yaml
 - ../../../../manifests/edb
 
 patches:
