@@ -3,8 +3,8 @@ namePrefix: rtr-app-
 
 resources:
 - ../../base
-- ../../../../manifests/cockroachdb/OperatorGroup_cockroachdb.yaml
-- ../../../../manifests/cockroachdb/Subscription_cockroachdb-certified.yaml
+- OperatorGroup_cockroachdb-certified.yaml
+- ../../../../manifests/cockroachdb
 
 patches:
   - target:
@@ -13,4 +13,13 @@ patches:
     patch: |-
       - op: remove
         path: /metadata/namespace
+  # - target:
+  #     group: crdb.cockroachlabs.com
+  #     version: v1alpha1
+  #     kind: CrdbCluster
+  #     name: cdb
+  #   patch: |-
+  #     - op: replace
+  #       path: /spec/image/name
+  #       value: cockroachdb/cockroach:v23.2.3
 
