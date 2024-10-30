@@ -2,4 +2,4 @@ namespace: openshift-operators
 
 resources:
 - Subscription_cloud-native-postgresql.yaml
-# - ConfigMap_postgresql-operator-controller-manager-config.yaml
+- ConfigMap_postgresql-operator-controller-manager-config.yaml
