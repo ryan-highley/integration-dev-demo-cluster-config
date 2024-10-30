@@ -10,6 +10,8 @@ patches:
   - target:
       group: operators.coreos.com
       version: v1
+      kind: Subscription
+      name: cockroachdb-certified
     patch: |-
       - op: remove
         path: /metadata/namespace
