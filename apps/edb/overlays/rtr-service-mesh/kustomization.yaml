@@ -3,6 +3,8 @@ namePrefix: rtr-app-
 
 resources:
 - ../../base
+- ../../../../manifests/cockroachdb/OperatorGroup_cockroachdb.yaml
+- ../../../../manifests/cockroachdb/Subscription_cockroachdb-certified.yaml
 
 patches:
   # - target:
@@ -14,6 +16,12 @@ patches:
   #     - op: replace
   #       path: /spec/gateways/0
   #       value: rtr-app-cluster-ingress-gw
+  - target:
+      group: operators.coreos.com
+      version: v1
+    patch: |-
+      - op: remove
+        path: /metadata/namespace
   - target:
       version: v1
       group: postgresql.k8s.enterprisedb.io

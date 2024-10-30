@@ -3,3 +3,14 @@ namePrefix: rtr-app-
 
 resources:
 - ../../base
+- ../../../../manifests/cockroachdb/OperatorGroup_cockroachdb.yaml
+- ../../../../manifests/cockroachdb/Subscription_cockroachdb-certified.yaml
+
+patches:
+  - target:
+      group: operators.coreos.com
+      version: v1
+    patch: |-
+      - op: remove
+        path: /metadata/namespace
+
