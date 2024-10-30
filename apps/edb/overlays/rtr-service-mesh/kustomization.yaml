@@ -5,12 +5,21 @@ resources:
 - ../../base
 
 patches:
+  # - target:
+  #     version: v1beta1
+  #     group: networking.istio.io
+  #     kind: VirtualService
+  #     name: cluster-ingress-vs
+  #   patch: |-
+  #     - op: replace
+  #       path: /spec/gateways/0
+  #       value: rtr-app-cluster-ingress-gw
   - target:
-      version: v1beta1
-      group: networking.istio.io
-      kind: VirtualService
-      name: cluster-ingress-vs
+      version: v1
+      group: postgresql.k8s.enterprisedb.io
+      kind: Pooler
+      name: cluster-pooler
     patch: |-
       - op: replace
-        path: /spec/gateways/0
-        value: rtr-app-cluster-ingress-gw
+        path: /spec/cluster
+        value: rtr-app-cluster

@@ -5,11 +5,11 @@ metadata:
   labels:
     app: rtr-service-mesh
     version: '1.0'
-    openshift.io/cluster-monitoring: 'true'
-    service-mesh-name: basic
+    # openshift.io/cluster-monitoring: 'true'
+    # service-mesh-name: basic
   annotations:
-    sidecar.istio.io/inject: 'true'
-    traffic.sidecar.istio.io/includeInboundPorts: '5432'
+    # sidecar.istio.io/inject: 'true'
+    # traffic.sidecar.istio.io/includeInboundPorts: '5432'
     # traffic.sidecar.istio.io/excludeOutboundPorts: '*'
     # traffic.sidecar.istio.io/excludeOutboundIPRanges: '*'
     # traffic.sidecar.istio.io/excludeInboundPorts: '8000,9187'
