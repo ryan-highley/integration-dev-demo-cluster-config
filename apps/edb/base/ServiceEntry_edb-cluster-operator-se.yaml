@@ -4,13 +4,22 @@ metadata:
   name: edb-cluster-operator-se
 spec:
   hosts:
-  - "*.rtr-app-edb"
-  location: MESH_INTERNAL
+  - "postgresql-operator-controller-manager-service.rtr-app-edb.svc"
+  location: MESH_EXTERNAL
   ports:
-  - number: 8000
-    name: https-8000
+  # - number: 8000
+  #   name: https-8000
+  #   protocol: HTTPS
+  # - number: 9187
+  #   name: https-9187
+  #   protocol: HTTPS
+  - number: 443
+    name: https-443
     protocol: HTTPS
-  - number: 9187
-    name: https-9187
+  - number: 9443
+    name: https-9443
     protocol: HTTPS
-  resolution: NONE
+  - number: 8080
+    name: http-8080
+    protocol: HTTP
+  resolution: DNS

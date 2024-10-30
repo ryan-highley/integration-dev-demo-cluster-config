@@ -4,3 +4,4 @@ resources:
 # - Pooler_cluster-pooler.yaml
 # - Gateway_cluster-ingress-gw.yaml
 # - VirtualService_cluster-ingress-vs.yaml
+- ServiceEntry_edb-cluster-operator-se.yaml
