@@ -3,4 +3,6 @@ kind: OperatorGroup
 metadata:
   name: cloud-native-postgresql
 spec:
+  targetNamespaces:
+    - rtr-app-edb
   upgradeStrategy: Default
