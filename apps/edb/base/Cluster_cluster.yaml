@@ -10,7 +10,7 @@ metadata:
   annotations:
     sidecar.istio.io/inject: 'true'
     traffic.sidecar.istio.io/excludeInboundPorts: '8000,9187'
-    # traffic.sidecar.istio.io/excludeOutboundPorts: '9443,8080'
+    traffic.sidecar.istio.io/excludeOutboundPorts: '9443,8080'
 spec:
   instances: 3
 
