@@ -3,4 +3,6 @@ kind: OperatorGroup
 metadata:
   name: cockroachdb-certified
 spec:
+  targetNamespaces:
+    - rtr-app-cdb
   upgradeStrategy: Default
