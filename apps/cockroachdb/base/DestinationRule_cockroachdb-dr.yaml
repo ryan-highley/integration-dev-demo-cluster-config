@@ -3,7 +3,7 @@ kind: DestinationRule
 metadata:
   name: cockroachdb-dr
 spec:
-  hosts: []
+  host: ""
   trafficPolicy:
     tls:
       mode: SIMPLE
