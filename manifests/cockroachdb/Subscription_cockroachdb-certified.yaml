@@ -4,7 +4,7 @@ metadata:
   labels:
     operators.coreos.com/cockroachdb-certified.openshift-operators: ''
   name: cockroachdb-certified
-  namespace: cockroachdb
+  namespace: openshift-operators
 spec:
   channel: stable
   installPlanApproval: Automatic

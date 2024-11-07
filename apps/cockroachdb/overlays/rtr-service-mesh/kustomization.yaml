@@ -18,31 +18,6 @@ patches:
         path: /metadata/labels/service-mesh-name
         value: basic
 
-  # Install the CockroachDB Operator in a separate, non-Service Mesh namespace
-  - target:
-      group: operators.coreos.com
-      version: v1
-      kind: Subscription
-      name: cockroachdb-certified
-    patch: |-
-      - op: replace
-        path: /metadata/namespace
-        value: rtr-app-cdb-operator
-
-  # Set the OperatorGroup to install in the cdb-operator namespace but watch the cdb namespace
-  - target:
-      group: operators.coreos.com
-      version: v1
-      kind: OperatorGroup
-      name: cockroachdb-certified-og
-    patch: |-
-      - op: add
-        path: /spec/targetNamespaces/0
-        value: rtr-app-cdb
-      - op: replace
-        path: /metadata/namespace
-        value: rtr-app-cdb-operator
-
   # Set the correct ServiceEntry hostnames
   - target:
       group: networking.istio.io
@@ -53,12 +28,3 @@ patches:
       - op: add
         path: /spec/hosts/0
         value: "*.rtr-app-cdb.rtr-app-cdb.svc"
-  # - target:
-  #     group: networking.istio.io
-  #     version: v1beta1
-  #     kind: DestinationRule
-  #     name: cockroachdb-dr
-  #   patch: |-
-  #     - op: replace
-  #       path: /spec/host
-  #       value: "*.rtr-app-cdb.rtr-app-cdb.svc"

@@ -1,3 +1,0 @@
-resources:
-- Project_cdb-operator.yaml
-- OperatorGroup_cockroachdb-certified-og.yaml

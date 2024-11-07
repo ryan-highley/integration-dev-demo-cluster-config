@@ -1,7 +1,0 @@
-apiVersion: project.openshift.io/v1
-kind: Project
-metadata:
-  name: cockroachdb
-  labels:
-    openshift.io/cluster-monitoring: "true"
-    service-mesh-name: basic

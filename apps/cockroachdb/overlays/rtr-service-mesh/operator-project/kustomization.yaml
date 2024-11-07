@@ -1,5 +1,4 @@
 namespace: rtr-app-cdb-operator
 
 resources:
-- ../../../separate-operator-namespace
-- ../../../../../manifests/cockroachdb
+- ../../separate-operator-namespace
