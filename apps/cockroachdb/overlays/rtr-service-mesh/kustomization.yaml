@@ -2,7 +2,7 @@ namespace: rtr-app-cdb
 namePrefix: rtr-app-
 
 resources:
-- Project_cdb-operator.yaml
+- operator-project/
 - ../../base
 - ../../../../manifests/cockroachdb
 
