@@ -3,5 +3,4 @@ apiVersion: project.openshift.io/v1
 metadata:
   name: cdb
   labels:
-    openshift.io/cluster-monitoring: 'true'
-    service-mesh-name: basic
+    openshift.io/user-monitoring: 'true'

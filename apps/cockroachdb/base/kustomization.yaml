@@ -1,4 +1,6 @@
 resources:
 - _Project_cdb.yaml
+- OperatorGroup_cockroachdb-certified-og.yaml
 - CrdbCluster_cockroachdb.yaml
-- ServiceEntry_cockroachdb.yaml
+- ServiceEntry_cockroachdb-se.yaml
+- DestinationRule_cockroachdb-dr

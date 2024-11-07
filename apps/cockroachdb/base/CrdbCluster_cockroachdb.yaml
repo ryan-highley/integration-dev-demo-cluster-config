@@ -27,7 +27,5 @@ spec:
   nodes: 3
   additionalLabels:
     sidecar.istio.io/inject: 'true'
-    app: rtr-service-mesh
-    version: '1.0'
   additionalAnnotations:
     traffic.sidecar.istio.io/excludeInboundPorts: '26258'
