@@ -2,3 +2,15 @@ namespace: rtr-app-cdb-operator
 
 resources:
 - ../../separate-operator-namespace
+
+patches:
+  # Set the OperatorGroup to install in the cdb-operator namespace but watch the cdb namespace
+  - target:
+      group: operators.coreos.com
+      version: v1
+      kind: OperatorGroup
+      name: cockroachdb-certified-og
+    patch: |-
+      - op: add
+        path: /spec/targetNamespaces/0
+        value: rtr-app-cdb
