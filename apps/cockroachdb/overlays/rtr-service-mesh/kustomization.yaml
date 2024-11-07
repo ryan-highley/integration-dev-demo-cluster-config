@@ -7,6 +7,15 @@ resources:
 
 patches:
   - target:
+      group: project.openshift.io
+      version: v1
+      kind: Project
+      name: cdb
+    patch: |-
+      - op: add
+        path: /metadata/labels/service-mesh-name
+        value: basic
+  - target:
       group: operators.coreos.com
       version: v1
       kind: Subscription
