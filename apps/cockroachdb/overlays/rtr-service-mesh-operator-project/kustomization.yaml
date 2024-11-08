@@ -1,10 +1,11 @@
 namespace: rtr-app-cdb-operator
+namePrefix: rtr-app-
 
 resources:
-- ../../separate-operator-namespace
+- ../../../../manifests/cockroachdb/overlays/separate-operator-namespace
 
 patches:
-  # Set the OperatorGroup to install in the cdb-operator namespace but watch the cdb namespace
+  # Set the OperatorGroup to watch the cdb namespace
   - target:
       group: operators.coreos.com
       version: v1
