@@ -20,6 +20,7 @@ spec:
       cpu: '2'
       memory: 8Gi
   tlsEnabled: true
+  automountServiceAccountToken: true
   additionalArgs:
     - '--accept-sql-without-tls'
   image:
