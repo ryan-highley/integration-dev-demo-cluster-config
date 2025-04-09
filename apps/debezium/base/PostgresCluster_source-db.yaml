@@ -1,0 +1,100 @@
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  creationTimestamp: "2025-01-16T19:46:48Z"
+  finalizers:
+  - postgres-operator.crunchydata.com/finalizer
+  generation: 8
+  name: source-db
+  namespace: source-db
+  resourceVersion: "305516"
+  uid: 7202a005-fd3c-400f-8169-5dec045cec01
+spec:
+  backups:
+    pgbackrest:
+      repos:
+      - name: repo1
+        volume:
+          volumeClaimSpec:
+            accessModes:
+            - ReadWriteOnce
+            resources:
+              requests:
+                storage: 1Gi
+  instances:
+  - dataVolumeClaimSpec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 1Gi
+    name: ""
+    replicas: 1
+  openshift: true
+  patroni:
+    dynamicConfiguration:
+      postgresql:
+        pg_hba:
+        - local replication debezium trust
+        - local source_db debezium trust
+        - host replication debezium all trust
+        - host source_db debezium all trust
+    leaderLeaseDurationSeconds: 30
+    port: 8008
+    syncPeriodSeconds: 10
+  port: 5432
+  postgresVersion: 16
+status:
+  conditions:
+  - lastTransitionTime: "2025-01-16T19:46:49Z"
+    message: Crunchy Postgres for Kubernetes requires registration for upgrades. Register
+      now to be ready for your next upgrade. See https://access.crunchydata.com/register-cpk
+      for details.
+    observedGeneration: 8
+    reason: TokenRequired
+    status: "False"
+    type: Registered
+  - lastTransitionTime: "2025-01-17T14:54:05Z"
+    message: pgBackRest dedicated repository host is ready
+    observedGeneration: 8
+    reason: RepoHostReady
+    status: "True"
+    type: PGBackRestRepoHostReady
+  - lastTransitionTime: "2025-01-16T19:47:17Z"
+    message: pgBackRest replica create repo is ready for backups
+    observedGeneration: 8
+    reason: StanzaCreated
+    status: "True"
+    type: PGBackRestReplicaRepoReady
+  - lastTransitionTime: "2025-01-16T19:49:16Z"
+    message: pgBackRest replica creation is now possible
+    observedGeneration: 8
+    reason: RepoBackupComplete
+    status: "True"
+    type: PGBackRestReplicaCreate
+  databaseRevision: 75697b85b4
+  instances:
+  - name: "00"
+    readyReplicas: 1
+    replicas: 1
+    updatedReplicas: 1
+  monitoring:
+    exporterConfiguration: 559c4c97d6
+  observedGeneration: 8
+  patroni:
+    systemIdentifier: "7460602296475922529"
+  pgbackrest:
+    repoHost:
+      apiVersion: apps/v1
+      kind: StatefulSet
+      ready: true
+    repos:
+    - bound: true
+      name: repo1
+      replicaCreateBackupComplete: true
+      stanzaCreated: true
+      volume: pvc-33efa407-3be9-440a-931c-a6b50d253335
+  proxy:
+    pgBouncer:
+      postgresRevision: 5c9966f6bc
+  usersRevision: 7964bfb56c

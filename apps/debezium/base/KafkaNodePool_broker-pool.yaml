@@ -1,0 +1,33 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaNodePool
+metadata:
+  creationTimestamp: "2025-01-16T19:43:20Z"
+  generation: 1
+  labels:
+    strimzi.io/cluster: platform-cluster
+  name: broker-pool
+  namespace: streams-platform
+  resourceVersion: "95098"
+  uid: f26cb66f-6aad-45dd-8ed1-0fee8d2765e5
+spec:
+  replicas: 3
+  roles:
+  - broker
+  storage:
+    type: jbod
+    volumes:
+    - id: 0
+      kraftMetadata: shared
+      type: ephemeral
+status:
+  clusterId: 3RCEf0yjShem64KlypycMQ
+  conditions: []
+  labelSelector: strimzi.io/cluster=platform-cluster,strimzi.io/name=platform-cluster-kafka,strimzi.io/kind=Kafka,strimzi.io/pool-name=broker-pool
+  nodeIds:
+  - 0
+  - 1
+  - 2
+  observedGeneration: 1
+  replicas: 3
+  roles:
+  - broker

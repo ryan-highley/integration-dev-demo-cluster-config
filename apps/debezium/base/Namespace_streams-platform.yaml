@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/description: ""
+    openshift.io/display-name: ""
+    openshift.io/requester: admin
+    openshift.io/sa.scc.mcs: s0:c28,c7
+    openshift.io/sa.scc.supplemental-groups: 1000770000/10000
+    openshift.io/sa.scc.uid-range: 1000770000/10000
+  creationTimestamp: "2025-01-16T19:22:07Z"
+  labels:
+    kubernetes.io/metadata.name: streams-platform
+    pod-security.kubernetes.io/audit: restricted
+    pod-security.kubernetes.io/audit-version: latest
+    pod-security.kubernetes.io/warn: restricted
+    pod-security.kubernetes.io/warn-version: latest
+  name: streams-platform
+  resourceVersion: "82184"
+  uid: 80b0e599-7f0a-451e-8df1-554eedad06c3
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active

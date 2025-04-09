@@ -1,0 +1,23 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaBridge
+metadata:
+  creationTimestamp: "2025-01-16T19:47:58Z"
+  generation: 1
+  name: streams-bridge
+  namespace: streams-platform
+  resourceVersion: "97769"
+  uid: 3dd303d7-0ab3-472f-af50-b3312ba095d3
+spec:
+  bootstrapServers: platform-cluster-kafka-bootstrap.streams-platform.svc:9092
+  http:
+    port: 8080
+  replicas: 1
+status:
+  conditions:
+  - lastTransitionTime: "2025-01-16T19:48:30.094523205Z"
+    status: "True"
+    type: Ready
+  labelSelector: strimzi.io/cluster=streams-bridge,strimzi.io/name=streams-bridge-bridge,strimzi.io/kind=KafkaBridge
+  observedGeneration: 1
+  replicas: 1
+  url: http://streams-bridge-bridge-service.streams-platform.svc:8080

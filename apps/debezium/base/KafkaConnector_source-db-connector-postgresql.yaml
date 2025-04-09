@@ -1,0 +1,42 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaConnector
+metadata:
+  creationTimestamp: "2025-01-16T22:17:04Z"
+  generation: 20
+  labels:
+    strimzi.io/cluster: platform-connect-cluster
+  name: source-db-connector-postgresql
+  namespace: streams-platform
+  resourceVersion: "319840"
+  uid: a5532273-5940-430a-bbbc-abfdf0072617
+spec:
+  class: io.debezium.connector.postgresql.PostgresConnector
+  config:
+    database.dbname: source_db
+    database.hostname: source-db-primary.source-db.svc
+    database.password: password
+    database.port: 5432
+    database.user: debezium
+    plugin.name: pgoutput
+    publication.autocreate.mode: all_tables
+    topic.prefix: source-db-connector
+  tasksMax: 1
+status:
+  conditions:
+  - lastTransitionTime: "2025-01-17T17:06:55.016661750Z"
+    status: "True"
+    type: Ready
+  connectorStatus:
+    connector:
+      state: RUNNING
+      worker_id: platform-connect-cluster-connect-0.platform-connect-cluster-connect.streams-platform.svc:8083
+    name: source-db-connector-postgresql
+    tasks:
+    - id: 0
+      state: RUNNING
+      worker_id: platform-connect-cluster-connect-0.platform-connect-cluster-connect.streams-platform.svc:8083
+    type: source
+  observedGeneration: 20
+  tasksMax: 1
+  topics:
+  - source-db-connector.public.principals

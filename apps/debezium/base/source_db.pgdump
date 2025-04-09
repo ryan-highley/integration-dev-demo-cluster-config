@@ -1,0 +1,115 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 16.6
+-- Dumped by pg_dump version 16.6
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: pgaudit; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS pgaudit WITH SCHEMA public;
+
+
+--
+-- Name: EXTENSION pgaudit; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION pgaudit IS 'provides auditing functionality';
+
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: principals; Type: TABLE; Schema: public; Owner: source_db_replication
+--
+
+CREATE TABLE public.principals (
+    id integer NOT NULL,
+    name text
+);
+
+
+ALTER TABLE public.principals OWNER TO source_db_replication;
+
+--
+-- Name: principals_id_seq; Type: SEQUENCE; Schema: public; Owner: source_db_replication
+--
+
+ALTER TABLE public.principals ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME public.principals_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
+-- Data for Name: principals; Type: TABLE DATA; Schema: public; Owner: source_db_replication
+--
+
+COPY public.principals (id, name) FROM stdin;
+1       joe
+2       bob
+3       sue
+4       ryan
+5       kendra
+6       tanner
+7       alex
+\.
+
+
+--
+-- Name: principals_id_seq; Type: SEQUENCE SET; Schema: public; Owner: source_db_replication
+--
+
+SELECT pg_catalog.setval('public.principals_id_seq', 7, true);
+
+
+--
+-- Name: principals principals_pkey; Type: CONSTRAINT; Schema: public; Owner: source_db_replication
+--
+
+ALTER TABLE ONLY public.principals
+    ADD CONSTRAINT principals_pkey PRIMARY KEY (id);
+
+ALTER TABLE ONLY public.principals REPLICA IDENTITY USING INDEX principals_pkey;
+
+
+--
+-- Name: dbz_publication; Type: PUBLICATION; Schema: -; Owner: debezium
+--
+
+CREATE PUBLICATION dbz_publication FOR ALL TABLES WITH (publish = 'insert, update, delete, truncate');
+
+
+ALTER PUBLICATION dbz_publication OWNER TO debezium;
+
+--
+-- Name: debezium; Type: PUBLICATION; Schema: -; Owner: source_db_replication
+--
+
+CREATE PUBLICATION debezium FOR ALL TABLES WITH (publish = 'insert, update, delete, truncate');
+
+
+ALTER PUBLICATION debezium OWNER TO source_db_replication;
+
+--
+-- PostgreSQL database dump complete
+--
