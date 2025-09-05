@@ -9,6 +9,3 @@ spec:
     kind: ClusterIssuer
   commonName: "ca.self-signer.cert-manager"
   isCA: true
-  keyEncoding: pkcs8
-  searchdomains: 
-  - cluster.local
