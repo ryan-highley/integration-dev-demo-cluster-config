@@ -1,4 +1,4 @@
 namespace: openshift-gitops
 
 resources:
-- messaging.yaml
+- streams-kafka.yaml

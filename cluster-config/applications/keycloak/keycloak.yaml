@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: config-sso
+  name: config-keycloak
 spec:
   destination:
-    namespace: rhsso
+    namespace: keycloak
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: manifests/sso/base
+    path: manifests/keycloak/base
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
     targetRevision: main
   syncPolicy:

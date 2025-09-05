@@ -2,11 +2,12 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   labels:
-    operators.coreos.com/rhsso-operator.rhsso: ''
-  name: rhsso-operator
+    operators.coreos.com/apicurio-registry-3.openshift-operators: ''
+  name: apicurio-registry-3
+  namespace: openshift-operators
 spec:
-  channel: stable
+  channel: 3.x
   installPlanApproval: Automatic
-  name: rhsso-operator
+  name: apicurio-registry-3
   source: redhat-operators
   sourceNamespace: openshift-marketplace

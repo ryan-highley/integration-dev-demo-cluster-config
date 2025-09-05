@@ -2,8 +2,8 @@ apiVersion: keycloak.org/v1alpha1
 kind: Keycloak
 metadata:
   labels:
-    app: sso
-  name: rhsso
+    app: keycloak
+  name: keycloak
 spec:
   externalAccess:
     enabled: true

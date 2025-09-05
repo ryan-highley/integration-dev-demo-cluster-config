@@ -2,12 +2,11 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   labels:
-    operators.coreos.com/amq-broker-rhel8.openshift-operators: ""
-  name: amq-broker-rhel8
-  namespace: openshift-operators
+    operators.coreos.com/rhbk-operator.keycloak: ''
+  name: rhbk-operator
 spec:
-  channel: 7.10.x
+  channel: stable-v26.2
   installPlanApproval: Automatic
-  name: amq-broker-rhel8
+  name: rhbk-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace

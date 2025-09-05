@@ -3,12 +3,13 @@ namePrefix: multi-tenant-kafka-
 
 resources:
 - ../../default/base/
-- ../../../applications/messaging/
+- ../../../applications/amq-broker/
+- ../../../applications/streams-kafka/
 - ../../../applications/apicurio-registry/
 - ../../../applications/cert-manager/
-- ../../../applications/service-mesh/
-- ../../../applications/sso/
-- ../../../applications/vault-secrets/
+# - ../../../applications/service-mesh/
+- ../../../applications/keycloak/
+# - ../../../applications/vault-secrets/
 
 patches:
   - target:
