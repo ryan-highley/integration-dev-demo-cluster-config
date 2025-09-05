@@ -1,6 +1,6 @@
 namespace: openshift-gitops
 
 resources:
-- ../../applications/cert-manager/
-- ../../applications/sso/
-- ../../applications/kafka/
+- ../../../applications/cert-manager/
+- ../../../applications/keycloak/
+- ../../../applications/streams-kafka/
