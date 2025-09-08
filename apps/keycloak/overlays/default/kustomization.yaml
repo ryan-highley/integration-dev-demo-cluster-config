@@ -1,4 +1,4 @@
 bases:
 - ../../base
 
-namespace: rhsso
+namespace: keycloak

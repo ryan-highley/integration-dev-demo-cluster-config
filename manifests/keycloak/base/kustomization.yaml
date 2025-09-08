@@ -4,5 +4,3 @@ resources:
 - Namespace_keycloak.yaml
 - OperatorGroup_keycloak.yaml
 - Subscription_rhbk-operator.yaml
-# - Keycloak_keycloak.yaml
-# - Secret_keycloak-db.yaml

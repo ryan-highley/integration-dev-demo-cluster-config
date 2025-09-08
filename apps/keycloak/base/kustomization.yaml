@@ -1,5 +1,2 @@
 resources:
-- ConfigMap_extension-postconfigure.yaml
-- ConfigMap_extensions-actions.yaml
 - Keycloak_keycloak.yaml
-- KeycloakRealm_kafka.yaml

@@ -1,13 +1,11 @@
-apiVersion: keycloak.org/v1alpha1
-kind: KeycloakRealm
+apiVersion: k8s.keycloak.org/v2alpha1
+kind: KeycloakRealmImport
 metadata:
   name: kafka
   labels:
     app: kafka
 spec:
-  instanceSelector:
-    matchLabels:
-      app: sso
+  keycloakCRName: keycloak
   realm:
     id: kafka
     realm: kafka
@@ -28,19 +26,19 @@ spec:
         standardFlowEnabled: false
         serviceAccountsEnabled: true
       # Apicurio Registry instance
-      - clientId: registry-client-api
-        clientAuthenticatorType: client-secret
-        secret: api-secret
-        standardFlowEnabled: false
-        serviceAccountsEnabled: true
-      - clientId: registry-client-ui
-        implicitFlowEnabled: true
-        redirectUris:
-          - '*'
-        standardFlowEnabled: true
-        webOrigins:
-          - '*'
-        publicClient: true
+      # - clientId: registry-client-api
+      #   clientAuthenticatorType: client-secret
+      #   secret: api-secret
+      #   standardFlowEnabled: false
+      #   serviceAccountsEnabled: true
+      # - clientId: registry-client-ui
+      #   implicitFlowEnabled: true
+      #   redirectUris:
+      #     - '*'
+      #   standardFlowEnabled: true
+      #   webOrigins:
+      #     - '*'
+      #   publicClient: true
       # Quarkus application
       - clientId: quarkus-app-client
         clientAuthenticatorType: client-secret
@@ -49,29 +47,29 @@ spec:
         serviceAccountsEnabled: true
 
 
-    users:
-      # Apicurio Registry UI users
-      - credentials:
-          - temporary: false
-            type: password
-            value: admin
-        enabled: true
-        realmRoles:
-          - sr-admin
-        username: registry-admin
-      - credentials:
-          - temporary: false
-            type: password
-            value: developer
-        enabled: true
-        realmRoles:
-          - sr-developer
-        username: registry-developer
-      - credentials:
-          - temporary: false
-            type: password
-            value: user
-        enabled: true
-        realmRoles:
-          - sr-readonly
-        username: registry-user
+    # users:
+    #   # Apicurio Registry UI users
+    #   - credentials:
+    #       - temporary: false
+    #         type: password
+    #         value: admin
+    #     enabled: true
+    #     realmRoles:
+    #       - sr-admin
+    #     username: registry-admin
+    #   - credentials:
+    #       - temporary: false
+    #         type: password
+    #         value: developer
+    #     enabled: true
+    #     realmRoles:
+    #       - sr-developer
+    #     username: registry-developer
+    #   - credentials:
+    #       - temporary: false
+    #         type: password
+    #         value: user
+    #     enabled: true
+    #     realmRoles:
+    #       - sr-readonly
+    #     username: registry-user
