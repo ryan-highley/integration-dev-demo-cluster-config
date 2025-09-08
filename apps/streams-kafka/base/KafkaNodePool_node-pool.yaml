@@ -14,12 +14,12 @@ spec:
     volumes:
       - id: 0
         type: persistent-claim
-        size: 100Gi
+        size: 10Gi
         deleteClaim: false
   resources: 
     requests:
-      memory: 8Gi
-      cpu: "2"
+      memory: 256Mi
+      cpu: 500m
     limits:
-      memory: 16Gi
-      cpu: "4"
+      memory: 1Gi
+      cpu: "1"
