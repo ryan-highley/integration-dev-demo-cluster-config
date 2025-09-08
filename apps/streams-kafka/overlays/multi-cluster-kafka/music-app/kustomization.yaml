@@ -11,4 +11,4 @@ resources:
 - KafkaUser_music-app-client.yaml
 
 commonLabels:
-  strimzi.io/cluster: music-app
+  strimzi.io/cluster: broker

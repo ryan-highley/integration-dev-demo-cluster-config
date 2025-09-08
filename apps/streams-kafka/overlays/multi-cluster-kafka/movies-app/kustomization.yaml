@@ -11,4 +11,4 @@ resources:
 - KafkaUser_movies-app-client.yaml
 
 commonLabels:
-  strimzi.io/cluster: movies-app
+  strimzi.io/cluster: broker
