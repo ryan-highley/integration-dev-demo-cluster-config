@@ -9,3 +9,6 @@ resources:
 - KafkaTopic_producers.yaml
 - KafkaTopic_songs.yaml
 - KafkaUser_music-app-client.yaml
+
+commonLabels:
+  strimzi.io/cluster: music-app

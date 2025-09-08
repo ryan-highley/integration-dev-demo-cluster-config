@@ -9,3 +9,6 @@ resources:
 - KafkaTopic_producers.yaml
 - KafkaTopic_stunts.yaml
 - KafkaUser_movies-app-client.yaml
+
+commonLabels:
+  strimzi.io/cluster: movies-app
