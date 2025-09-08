@@ -13,6 +13,8 @@ spec:
       transaction.state.log.min.isr: 2
       default.replication.factor: 3
       min.insync.replicas: 2
+    authorization:
+      type: simple
     listeners:
     - name: insecure
       port: 9092
