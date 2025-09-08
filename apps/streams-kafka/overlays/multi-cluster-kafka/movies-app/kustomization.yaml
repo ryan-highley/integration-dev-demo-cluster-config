@@ -1,6 +1,7 @@
 namespace: movies-app
 
 resources:
+- Namespace_movies-app.yaml
 - ../../../base/
 - KafkaTopic_movies.yaml
 - KafkaTopic_actors.yaml

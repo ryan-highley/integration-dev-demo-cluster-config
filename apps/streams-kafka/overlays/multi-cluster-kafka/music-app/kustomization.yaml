@@ -1,6 +1,7 @@
 namespace: music-app
 
 resources:
+- Namespace_music-app.yaml
 - ../../../base/
 - KafkaTopic_albums.yaml
 - KafkaTopic_artists.yaml
