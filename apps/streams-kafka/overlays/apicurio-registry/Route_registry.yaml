@@ -2,7 +2,6 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: registry
-  namespace: kafka
   labels:
     app: registry
 spec:

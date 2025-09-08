@@ -3,7 +3,7 @@ kind: KafkaUser
 metadata:
   labels:
     strimzi.io/cluster: broker
-  name: quarkus-app-client
+  name: movies-app-client
 spec:
   authentication:
     type: scram-sha-512

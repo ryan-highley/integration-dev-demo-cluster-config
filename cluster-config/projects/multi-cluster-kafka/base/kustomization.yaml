@@ -1,0 +1,22 @@
+namespace: openshift-gitops
+namePrefix: multi-cluster-kafka-
+
+resources:
+- ../../default/base/
+- ../../../applications/amq-broker/
+- ../../../applications/streams-kafka/
+- ../../../applications/apicurio-registry/
+- ../../../applications/cert-manager/
+# - ../../../applications/service-mesh/
+- ../../../applications/keycloak/
+# - ../../../applications/vault-secrets/
+
+patches:
+  - target:
+      version: v1alpha1
+      group: argoproj.io
+      kind: Application
+    patch: |-
+      - op: replace
+        path: /spec/project
+        value: multi-cluster-kafka-cluster-config

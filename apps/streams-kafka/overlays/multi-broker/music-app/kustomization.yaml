@@ -1,0 +1,10 @@
+namespace: music-app
+
+resources:
+- ../../../base/
+- KafkaTopic_albums.yaml
+- KafkaTopic_artists.yaml
+- KafkaTopic_bands.yaml
+- KafkaTopic_producers.yaml
+- KafkaTopic_songs.yaml
+- KafkaUser_music-app-client.yaml

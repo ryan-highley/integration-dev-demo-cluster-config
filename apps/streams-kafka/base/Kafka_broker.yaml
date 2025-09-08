@@ -2,7 +2,6 @@ apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
   name: broker
-  namespace: kafka
 spec:
   kafka:
     authorization:
@@ -12,25 +11,37 @@ spec:
       port: 9092
       tls: false
       type: internal
+      authentication:
+        type: scram-sha-512
     - authentication:
         type: tls
       name: mtls
-      port: 9094
+      port: 9093
       tls: true
       type: internal
     - authentication:
-        type: oauth
-        enableOauthBearer: true
-        jwksEndpointUri: https://keycloak-keycloak.apps.example.cluster.com/auth/realms/kafka/protocol/openid-connect/certs
-        validIssuerUri: https://keycloak-keycloak.apps.example.cluster.com/auth/realms/kafka
-        userNameClaim: azp
+        type: tls
+      name: external-mtls
+      port: 9094
+      tls: true
+      type: internal
+      configuration:
+        brokerCertChainAndKey:
+          secretName: cert-broker-secret
+          certificate: tls.crt
+          key: tls.key
+    - authentication:
+        type: keycloak
+        tokenEndpointUri: https://keycloak-keycloak.svc.cluster.local/auth/realms/kafka/protocol/openid-connect/token
+        delegateToKafkaAcls: false
+        disableTlsHostnameVerification: false
         clientId: broker-client
         clientSecret:
           secretName: broker-client
           key: clientSecret
       name: oauth
       port: 9096
-      tls: false
+      tls: true
       type: internal
     replicas: 3
     resources:
