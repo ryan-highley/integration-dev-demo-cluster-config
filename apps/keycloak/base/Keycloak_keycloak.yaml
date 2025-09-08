@@ -8,4 +8,8 @@ spec:
   instances: 1
   http:
     tlsSecret: keycloak-tls-secret
+  networkPolicy:
+    enabled: true
+  hostname:
+    hostname: keycloak-service-keycloak.apps.rvoggkwt.eastus.aroapp.io
     
