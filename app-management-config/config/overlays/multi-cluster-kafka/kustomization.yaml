@@ -4,3 +4,12 @@ resources:
 - ../../../applications/cert-manager/
 - ../../../applications/keycloak/
 - ../../../applications/streams-kafka/
+
+patches:
+  - target:
+      kind: Application
+      name: streams-kafka-app
+    patch: |-
+      - op: replace
+        path: /spec/source/path
+        value: apps/streams-kafka/overlays/multi-cluster-kafka
