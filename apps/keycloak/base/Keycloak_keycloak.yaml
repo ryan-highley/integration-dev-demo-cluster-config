@@ -6,3 +6,6 @@ metadata:
     app: keycloak
 spec:
   instances: 1
+  http:
+    tlsSecret: keycloak-tls-secret
+    
