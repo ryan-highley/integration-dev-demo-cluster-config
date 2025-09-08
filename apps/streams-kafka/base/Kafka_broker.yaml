@@ -21,7 +21,7 @@ spec:
       type: internal
     - authentication:
         type: tls
-      name: external-mtls
+      name: certmgr
       port: 9094
       tls: true
       type: internal
@@ -31,6 +31,16 @@ spec:
           certificate: tls.crt
           key: tls.key
     - authentication:
+        type: oauth
+        enableOauthBearer: true
+        jwksEndpointUri: https://keycloak-keycloak.svc.cluster.local/auth/realms/kafka/protocol/openid-connect/certs
+        validIssuerUri: https://keycloak-keycloak.svc.cluster.local/auth/realms/kafka
+        userNameClaim: azp
+        clientId: broker-client
+        clientSecret:
+          secretName: broker-client
+          key: clientSecret
+      authorization:
         type: keycloak
         tokenEndpointUri: https://keycloak-keycloak.svc.cluster.local/auth/realms/kafka/protocol/openid-connect/token
         delegateToKafkaAcls: false
