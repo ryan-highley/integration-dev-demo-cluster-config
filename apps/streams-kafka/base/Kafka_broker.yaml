@@ -20,25 +20,25 @@ spec:
       port: 9092
       tls: false
       type: internal
-      # authentication:
-      #   type: scram-sha-512
-    # - authentication:
-    #     type: tls
-    - name: mtls
+      authentication:
+        type: scram-sha-512
+    - authentication:
+        type: tls
+      name: mtls
       port: 9093
       tls: true
       type: internal
-    # - authentication:
-    #     type: tls
-    #   name: certmgr
-    #   port: 9094
-    #   tls: true
-    #   type: internal
-    #   configuration:
-    #     brokerCertChainAndKey:
-    #       secretName: cert-broker-secret
-    #       certificate: tls.crt
-    #       key: tls.key
+    - authentication:
+        type: tls
+      name: certmgr
+      port: 9094
+      tls: true
+      type: internal
+      configuration:
+        brokerCertChainAndKey:
+          secretName: cert-broker-secret
+          certificate: tls.crt
+          key: tls.key
     # - authentication:
     #     type: oauth
     #     enableOauthBearer: true
