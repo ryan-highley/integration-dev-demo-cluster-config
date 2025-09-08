@@ -1,7 +1,7 @@
-namespace: music-app
+namespace: music-app-kafka
 
 resources:
-- Namespace_music-app.yaml
+- Namespace_music-app-kafka.yaml
 - ../../../base/
 - KafkaTopic_albums.yaml
 - KafkaTopic_artists.yaml
@@ -12,3 +12,18 @@ resources:
 
 commonLabels:
   strimzi.io/cluster: broker
+
+patches:
+  - target:
+      kind: Certificate
+      name: broker-listeners
+    patch: |-
+      - op: replace
+        path: /spec/dnsNames
+        value:
+          - '*.broker-kafka-brokers'
+          - '*.broker-kafka-brokers.music-app-kafka.svc'
+          - '*.broker-kafka-brokers.music-app-kafka.svc.cluster.local'
+          - broker-kafka-bootstrap
+          - broker-kafka-bootstrap.music-app-kafka.svc
+          - broker-kafka-bootstrap.music-app-kafka.svc.cluster.local
