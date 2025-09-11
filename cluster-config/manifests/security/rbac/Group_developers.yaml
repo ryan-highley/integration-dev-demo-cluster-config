@@ -1,6 +1,6 @@
 apiVersion: user.openshift.io/v1
 kind: Group
 metadata:
-  name: developer
+  name: developers
 users:
   - ocp-developer

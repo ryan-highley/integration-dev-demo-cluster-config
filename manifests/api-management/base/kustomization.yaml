@@ -1,4 +1,0 @@
-resources:
-- 3scale-operator-subscription.yaml
-# - system-database-template.yaml
-# - zync-database-template.yaml

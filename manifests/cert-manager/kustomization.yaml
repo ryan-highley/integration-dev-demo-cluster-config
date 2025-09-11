@@ -1,4 +1,0 @@
-resources:
-- Namespace_cert-manager-operator.yaml
-- OperatorGroup_cert-manager-operator.yaml
-- Subscription_cert-manager-subscription.yaml

@@ -4,6 +4,7 @@ metadata:
   labels:
     operators.coreos.com/cloud-native-postgresql.openshift-operators: ''
   name: cloud-native-postgresql
+  namespace: openshift-operators
 spec:
   channel: stable-v1.24
   installPlanApproval: Automatic
