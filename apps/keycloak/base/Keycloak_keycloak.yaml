@@ -11,5 +11,5 @@ spec:
   networkPolicy:
     enabled: true
   hostname:
-    hostname: keycloak-service-keycloak.apps.rvoggkwt.eastus.aroapp.io
+    hostname: keycloak-service.keycloak.svc.cluster.local
     
