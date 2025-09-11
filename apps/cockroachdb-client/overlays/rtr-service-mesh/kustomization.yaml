@@ -1,0 +1,18 @@
+namespace: rtr-app-cdb-client
+namePrefix: rtr-app-
+
+resources:
+- ../../base
+
+patches:
+
+  # Set CDB Client namespace to be Service Mesh-enabled
+  - target:
+      group: project.openshift.io
+      version: v1
+      kind: Project
+      name: cdb-client
+    patch: |-
+      - op: add
+        path: /metadata/labels/service-mesh-name
+        value: basic
