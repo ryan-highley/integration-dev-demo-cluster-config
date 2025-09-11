@@ -3,26 +3,21 @@ namePrefix: test-sit-rtr-in-mesh-
 
 resources:
 - ../../base
-- ../../../../manifests/cockroachdb
 
 patches:
+
+  # Set CDB namespace to be Service Mesh-enabled
   - target:
-      group: operators.coreos.com
+      group: project.openshift.io
       version: v1
-      kind: Subscription
-      name: cockroachdb-certified
-    patch: |-
-      - op: remove
-        path: /metadata/namespace
-  - target:
-      group: operators.coreos.com
-      version: v1
-      kind: OperatorGroup
-      name: cockroachdb-certified-og
+      kind: Project
+      name: cdb
     patch: |-
       - op: add
-        path: /spec/targetNamespaces/0
-        value: test-sit-rtr-in-mesh-cdb
+        path: /metadata/labels/istio-injection
+        value: enabled
+
+  # Set the correct ServiceEntry hostnames
   - target:
       group: networking.istio.io
       version: v1beta1
@@ -31,13 +26,4 @@ patches:
     patch: |-
       - op: add
         path: /spec/hosts/0
-        value: "*.test-sit-rtr-in-mesh-cdb.test-sit-rtr-in-mesh-cdb.svc"
-  - target:
-      group: networking.istio.io
-      version: v1beta1
-      kind: DestinationRule
-      name: cockroachdb-dr
-    patch: |-
-      - op: replace
-        path: /spec/host
         value: "*.test-sit-rtr-in-mesh-cdb.test-sit-rtr-in-mesh-cdb.svc"

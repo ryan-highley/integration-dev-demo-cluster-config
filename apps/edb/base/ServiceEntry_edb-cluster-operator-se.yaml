@@ -3,16 +3,9 @@ kind: ServiceEntry
 metadata:
   name: edb-cluster-operator-se
 spec:
-  hosts:
-  - "postgresql-operator-controller-manager-service.rtr-app-edb.svc"
+  hosts: []
   location: MESH_EXTERNAL
   ports:
-  # - number: 8000
-  #   name: https-8000
-  #   protocol: HTTPS
-  # - number: 9187
-  #   name: https-9187
-  #   protocol: HTTPS
   - number: 443
     name: https-443
     protocol: HTTPS

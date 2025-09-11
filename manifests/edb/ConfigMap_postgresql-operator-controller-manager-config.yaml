@@ -4,4 +4,4 @@ metadata:
   name: postgresql-operator-controller-manager-config
 data:
   INHERITED_ANNOTATIONS: 'sidecar.istio.io/*, traffic.sidecar.istio.io/*, openshift.io/*'
-  INHERITED_LABELS: 'sidecar.istio.io/*, istio-injection, app, version'
+  INHERITED_LABELS: 'service-mesh-name, app, version'
