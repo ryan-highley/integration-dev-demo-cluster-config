@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: keycloak-app
+spec:
+  destination:
+    namespace: keycloak
+    server: https://kubernetes.default.svc
+  project: keycloak
+  source:
+    path: apps/keycloak/overlays/default
+    repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

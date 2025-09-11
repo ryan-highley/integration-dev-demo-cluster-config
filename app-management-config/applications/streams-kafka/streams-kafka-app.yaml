@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: streams-kafka-app
+spec:
+  destination:
+    namespace: streams-platform
+    server: https://kubernetes.default.svc
+  project: streams-kafka
+  source:
+    path: apps/streams-kafka/overlays/multi-tenant-kafka
+    repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

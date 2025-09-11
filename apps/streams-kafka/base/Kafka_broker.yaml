@@ -1,0 +1,69 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: Kafka
+metadata:
+  name: broker
+  annotations:
+    strimzi.io/node-pools: enabled
+    strimzi.io/kraft: enabled
+spec:
+  kafka:
+    config:
+      offsets.topic.replication.factor: 3
+      transaction.state.log.replication.factor: 3
+      transaction.state.log.min.isr: 2
+      default.replication.factor: 3
+      min.insync.replicas: 2
+    authorization:
+      type: simple
+    listeners:
+    - name: insecure
+      port: 9092
+      tls: false
+      type: internal
+      authentication:
+        type: scram-sha-512
+    - authentication:
+        type: tls
+      name: mtls
+      port: 9093
+      tls: true
+      type: internal
+    - authentication:
+        type: tls
+      name: certmgr
+      port: 9094
+      tls: true
+      type: internal
+      configuration:
+        brokerCertChainAndKey:
+          secretName: cert-broker-secret
+          certificate: tls.crt
+          key: tls.key
+    # - authentication:
+    #     type: oauth
+    #     enableOauthBearer: true
+    #     jwksEndpointUri: https://keycloak-keycloak.svc.cluster.local/auth/realms/kafka/protocol/openid-connect/certs
+    #     validIssuerUri: https://keycloak-keycloak.svc.cluster.local/auth/realms/kafka
+    #     userNameClaim: azp
+    #     clientId: broker-client
+    #     clientSecret:
+    #       secretName: broker-client
+    #       key: clientSecret
+    #   name: oauth
+    #   port: 9096
+    #   tls: true
+    #   type: internal
+    # authorization:
+    #   type: keycloak
+    #   tokenEndpointUri: https://keycloak-keycloak.svc.cluster.local/auth/realms/kafka/protocol/openid-connect/token
+    #   delegateToKafkaAcls: false
+    #   disableTlsHostnameVerification: false
+    #   clientId: broker-client
+    #   clientSecret:
+    #     secretName: broker-client
+    #     key: clientSecret
+    version: 4.0.0
+    metadataVersion: 4.0-IV3
+  entityOperator:
+    topicOperator: {}
+    userOperator: {}

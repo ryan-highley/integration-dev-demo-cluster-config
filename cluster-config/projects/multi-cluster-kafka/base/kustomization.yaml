@@ -1,5 +1,5 @@
 namespace: openshift-gitops
-namePrefix: multi-tenant-kafka-
+namePrefix: multi-cluster-kafka-
 
 resources:
 - ../../default/base/
@@ -19,4 +19,4 @@ patches:
     patch: |-
       - op: replace
         path: /spec/project
-        value: multi-tenant-kafka-cluster-config
+        value: multi-cluster-kafka-cluster-config

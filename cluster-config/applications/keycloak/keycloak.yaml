@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: config-keycloak
+spec:
+  destination:
+    namespace: keycloak
+    server: https://kubernetes.default.svc
+  project: cluster-config
+  source:
+    path: manifests/keycloak/base
+    repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

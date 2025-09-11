@@ -1,2 +1,4 @@
 .quarkus/
+.idea/
+test-*/
 

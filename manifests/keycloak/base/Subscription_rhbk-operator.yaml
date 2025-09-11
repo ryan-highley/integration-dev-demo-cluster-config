@@ -2,12 +2,11 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   labels:
-    operators.coreos.com/servicemeshoperator3.openshift-operators: ''
-  name: servicemeshoperator3
-  namespace: openshift-operators
+    operators.coreos.com/rhbk-operator.keycloak: ''
+  name: rhbk-operator
 spec:
-  channel: stable
+  channel: stable-v26.2
   installPlanApproval: Automatic
-  name: servicemeshoperator3
+  name: rhbk-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace

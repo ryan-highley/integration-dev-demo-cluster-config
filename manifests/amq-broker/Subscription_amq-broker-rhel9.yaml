@@ -2,12 +2,12 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   labels:
-    operators.coreos.com/servicemeshoperator3.openshift-operators: ''
-  name: servicemeshoperator3
+    operators.coreos.com/amq-broker-rhel9.openshift-operators: ""
+  name: amq-broker-rhel9
   namespace: openshift-operators
 spec:
-  channel: stable
+  channel: 7.13.x
   installPlanApproval: Automatic
-  name: servicemeshoperator3
+  name: amq-broker-rhel9
   source: redhat-operators
   sourceNamespace: openshift-marketplace

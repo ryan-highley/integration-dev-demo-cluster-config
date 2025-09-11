@@ -1,9 +1,0 @@
-resources:
-- Secret_broker-client.yaml
-- Kafka_broker.yaml
-- KafkaTopic_movies.yaml
-- KafkaUser_quarkus-app-client.yaml
-- ApicurioRegistry_registry.yaml
-- Certificate_broker-listeners.yaml
-- Route_registry.yaml
-

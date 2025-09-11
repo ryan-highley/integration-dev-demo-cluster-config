@@ -1,0 +1,7 @@
+bases:
+- ../../base
+
+namespace: streams-platform
+
+resources:
+- Namespace_streams-platform.yaml

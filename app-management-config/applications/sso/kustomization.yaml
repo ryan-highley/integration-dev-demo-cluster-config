@@ -1,5 +1,0 @@
-namespace: openshift-gitops
-
-resources:
-- sso-project.yaml
-- sso-app.yaml

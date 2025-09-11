@@ -1,0 +1,5 @@
+resources:
+- Secret_broker-client.yaml
+- KafkaNodePool_node-pool.yaml
+- Kafka_broker.yaml
+- Certificate_broker-listeners.yaml

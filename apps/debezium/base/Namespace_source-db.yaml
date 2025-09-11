@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/description: ""
+    openshift.io/display-name: ""
+    openshift.io/requester: admin
+    openshift.io/sa.scc.mcs: s0:c27,c24
+    openshift.io/sa.scc.supplemental-groups: 1000750000/10000
+    openshift.io/sa.scc.uid-range: 1000750000/10000
+  creationTimestamp: "2025-01-16T19:21:13Z"
+  labels:
+    kubernetes.io/metadata.name: source-db
+    pod-security.kubernetes.io/audit: restricted
+    pod-security.kubernetes.io/audit-version: latest
+    pod-security.kubernetes.io/warn: restricted
+    pod-security.kubernetes.io/warn-version: latest
+  name: source-db
+  resourceVersion: "81591"
+  uid: 094f23de-ebb8-48a3-a472-182b96cac94e
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active

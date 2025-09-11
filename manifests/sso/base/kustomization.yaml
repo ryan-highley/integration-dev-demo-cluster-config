@@ -1,8 +1,0 @@
-namespace: rhsso
-
-resources:
-# - namespace.yaml
-# - rhsso-operator-group.yaml
-- rhsso-operator-subscription.yaml
-- keycloak.yaml
-# - keycloak-db-secret.yaml

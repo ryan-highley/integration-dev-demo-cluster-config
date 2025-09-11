@@ -1,0 +1,5 @@
+namespace: openshift-gitops
+
+resources:
+- streams-kafka-project.yaml
+- streams-kafka-app.yaml

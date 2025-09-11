@@ -1,0 +1,33 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaNodePool
+metadata:
+  creationTimestamp: "2025-01-16T19:42:55Z"
+  generation: 1
+  labels:
+    strimzi.io/cluster: platform-cluster
+  name: controller-pool
+  namespace: streams-platform
+  resourceVersion: "95100"
+  uid: 0fd7888a-6178-4871-bd57-209b604649d5
+spec:
+  replicas: 3
+  roles:
+  - controller
+  storage:
+    type: jbod
+    volumes:
+    - id: 0
+      kraftMetadata: shared
+      type: ephemeral
+status:
+  clusterId: 3RCEf0yjShem64KlypycMQ
+  conditions: []
+  labelSelector: strimzi.io/cluster=platform-cluster,strimzi.io/name=platform-cluster-kafka,strimzi.io/kind=Kafka,strimzi.io/pool-name=controller-pool
+  nodeIds:
+  - 3
+  - 4
+  - 5
+  observedGeneration: 1
+  replicas: 3
+  roles:
+  - controller

@@ -1,0 +1,29 @@
+namespace: movies-app-kafka
+
+resources:
+- Namespace_movies-app-kafka.yaml
+- ../../../base/
+- KafkaTopic_movies.yaml
+- KafkaTopic_actors.yaml
+- KafkaTopic_directors.yaml
+- KafkaTopic_producers.yaml
+- KafkaTopic_stunts.yaml
+- KafkaUser_movies-app-client.yaml
+
+commonLabels:
+  strimzi.io/cluster: broker
+
+patches:
+  - target:
+      kind: Certificate
+      name: broker-listeners
+    patch: |-
+      - op: replace
+        path: /spec/dnsNames
+        value:
+          - '*.broker-kafka-brokers'
+          - '*.broker-kafka-brokers.movies-app-kafka.svc'
+          - '*.broker-kafka-brokers.movies-app-kafka.svc.cluster.local'
+          - broker-kafka-bootstrap
+          - broker-kafka-bootstrap.movies-app-kafka.svc
+          - broker-kafka-bootstrap.movies-app-kafka.svc.cluster.local
