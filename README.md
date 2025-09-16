@@ -48,12 +48,6 @@ Wait for the pods to appear
 echo -n "Still waiting" ; until [[ $(oc get pods -n openshift-gitops -o name  | wc -l) -ne 0 ]]; do echo -n "."; sleep 3; done; echo ""
 ```
 
-Give the ArgoCD serviceAccount permission to admin the cluster
-
-```shell
-oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-application-controller -n openshift-gitops
-```
-
 Wait for the deployment rollout
 
 ```shell
