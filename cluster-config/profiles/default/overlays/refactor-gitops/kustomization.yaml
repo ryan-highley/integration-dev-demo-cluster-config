@@ -1,0 +1,14 @@
+resources:
+  - ../security
+
+patches:
+  - target:
+      kind: Application
+      name: cluster-config
+    patch: |-
+      - op: replace
+        path: /spec/source/targetRevision
+        value: refactor-gitops
+      - op: replace
+        path: /spec/source/path
+        value: cluster-config/profiles/default/overlays/refactor-gitops
