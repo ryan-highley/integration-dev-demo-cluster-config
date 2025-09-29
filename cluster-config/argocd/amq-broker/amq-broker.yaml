@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: manifests/amq-broker
+    path: manifests/operators/amq-broker
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
     targetRevision: main
   syncPolicy:

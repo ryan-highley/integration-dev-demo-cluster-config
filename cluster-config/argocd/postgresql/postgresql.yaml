@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: config-streams-kafka
+  name: config-edb
 spec:
   destination:
     namespace: openshift-gitops
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: manifests/operators/streams-kafka
+    path: manifests/operators/postgresql
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
     targetRevision: main
   syncPolicy:

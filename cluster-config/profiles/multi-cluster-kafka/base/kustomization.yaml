@@ -3,13 +3,13 @@ namePrefix: multi-cluster-kafka-
 
 resources:
 - ../../default/base/
-- ../../../applications/amq-broker/
-- ../../../applications/streams-kafka/
-- ../../../applications/apicurio-registry/
-- ../../../applications/cert-manager/
-# - ../../../applications/service-mesh/
-- ../../../applications/keycloak/
-# - ../../../applications/vault-secrets/
+- ../../../argocd/amq-broker/
+- ../../../argocd/streams-kafka/
+- ../../../argocd/apicurio-registry/
+- ../../../argocd/cert-manager/
+# - ../../../argocd/service-mesh/
+- ../../../argocd/keycloak/
+# - ../../../argocd/vault-secrets/
 
 patches:
   - target:
@@ -20,3 +20,12 @@ patches:
       - op: replace
         path: /spec/project
         value: multi-cluster-kafka-cluster-config
+  - target:
+      version: v1alpha1
+      group: argoproj.io
+      kind: Application
+      name: cluster-config
+    patch: |-
+      - op: replace
+        path: /spec/source/path
+        value: cluster-config/profiles/multi-cluster-kafka/base

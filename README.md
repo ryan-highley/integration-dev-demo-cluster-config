@@ -57,7 +57,7 @@ oc rollout status deploy/openshift-gitops-server -n openshift-gitops
 To get the admin password
 
 ```shell
-oc  get secret openshift-gitops-cluster -n openshift-gitops -ojsonpath='{.data.admin\.password}' | base64 -d ; echo
+oc get secret openshift-gitops-cluster -n openshift-gitops -ojsonpath='{.data.admin\.password}' | base64 -d ; echo
 ```
 
 ## Deploying this Repo

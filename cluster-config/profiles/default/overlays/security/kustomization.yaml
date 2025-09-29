@@ -1,0 +1,4 @@
+resources:
+  - ../../base
+  - ../../../../manifests/security/auth-htpass
+  - ../../../../manifests/security/rbac

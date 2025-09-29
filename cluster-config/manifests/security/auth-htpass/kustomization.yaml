@@ -1,0 +1,3 @@
+resources:
+  - OAuth_cluster.yaml
+  - Secret_htpass-secret.yaml

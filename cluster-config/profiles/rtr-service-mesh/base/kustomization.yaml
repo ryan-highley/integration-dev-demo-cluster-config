@@ -3,11 +3,11 @@ namePrefix: rtr-service-mesh-
 
 resources:
 - ../../default/base/
-- ../../../applications/streams-kafka/
-- ../../../applications/cockroachdb/
-- ../../../applications/edb/
-- ../../../applications/service-mesh/
-- ../../../applications/vault-secrets/
+- ../../../argocd/streams-kafka/
+- ../../../argocd/cockroachdb/
+- ../../../argocd/edb/
+- ../../../argocd/service-mesh/
+- ../../../argocd/vault-secrets/
 
 patches:
   - target:
@@ -26,4 +26,4 @@ patches:
     patch: |-
       - op: replace
         path: /spec/source/path
-        value: cluster-config/projects/rtr-service-mesh/base
+        value: cluster-config/profiles/rtr-service-mesh/base
