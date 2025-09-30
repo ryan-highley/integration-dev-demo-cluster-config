@@ -1,0 +1,56 @@
+namespace: movies-app-kafka
+resources:
+  - ../../../../argocd/streams-kafka/
+  - KafkaTopic_movies.yaml
+  - KafkaTopic_actors.yaml
+  - KafkaTopic_directors.yaml
+  - KafkaTopic_producers.yaml
+  - KafkaTopic_stunts.yaml
+  - KafkaUser_movies-app-client.yaml
+labels:
+  - pairs:
+      strimzi.io/cluster: cluster
+patches:
+  - target:
+      kind: AppProject
+      name: streams-kafka
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: movies-app-kafka
+      - op: replace
+        path: /metadata/namespace
+        value: openshift-gitops
+    options:
+      allowNameChange: true
+  - target:
+      kind: Application
+      name: streams-kafka-app
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: movies-app-kafka-app
+      - op: replace
+        path: /metadata/namespace
+        value: openshift-gitops
+      - op: replace
+        path: /spec/destination/namespace
+        value: movies-app-kafka
+      - op: replace
+        path: /spec/project
+        value: movies-app-kafka
+    options:
+      allowNameChange: true
+  - target:
+      kind: Certificate
+      name: broker-listeners
+    patch: |-
+      - op: replace
+        path: /spec/dnsNames
+        value:
+          - '*.cluster-kafka-brokers'
+          - '*.cluster-kafka-brokers.movies-app-kafka.svc'
+          - '*.cluster-kafka-brokers.movies-app-kafka.svc.cluster.local'
+          - cluster-kafka-bootstrap
+          - cluster-kafka-bootstrap.movies-app-kafka.svc
+          - cluster-kafka-bootstrap.movies-app-kafka.svc.cluster.local
