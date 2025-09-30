@@ -11,7 +11,7 @@ spec:
   source:
     path: apps/demo-weather-interface/overlays/dev
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
-    targetRevision: main
+    # targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true

@@ -2,13 +2,20 @@ resources:
   - ../security
 
 patches:
+  # - target:
+  #     kind: Application
+  #     group: argoproj.io
+  #     version: v1alpha1
+  #   patch: |-
+  #     - op: replace
+  #       path: /spec/source/targetRevision
+  #       value: refactor-gitops
   - target:
       kind: Application
+      group: argoproj.io
+      version: v1alpha1
       name: cluster-config
     patch: |-
-      - op: replace
-        path: /spec/source/targetRevision
-        value: refactor-gitops
       - op: replace
         path: /spec/source/path
         value: cluster-config/profiles/default/overlays/refactor-gitops

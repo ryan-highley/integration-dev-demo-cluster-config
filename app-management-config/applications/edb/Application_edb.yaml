@@ -10,7 +10,7 @@ spec:
   source:
     path: apps/edb/base
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
-    targetRevision: main
+    # targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true

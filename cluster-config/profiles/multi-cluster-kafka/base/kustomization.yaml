@@ -5,7 +5,7 @@ resources:
 - ../../default/base/
 - ../../../argocd/amq-broker/
 - ../../../argocd/streams-kafka/
-- ../../../argocd/apicurio-registry/
+# - ../../../argocd/apicurio-registry/
 - ../../../argocd/cert-manager/
 # - ../../../argocd/service-mesh/
 - ../../../argocd/keycloak/
