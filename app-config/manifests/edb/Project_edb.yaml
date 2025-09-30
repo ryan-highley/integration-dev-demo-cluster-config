@@ -1,7 +1,0 @@
-kind: Project
-apiVersion: project.openshift.io/v1
-metadata:
-  name: edb
-  labels:
-    openshift.io/cluster-monitoring: 'true'
-    service-mesh-name: basic

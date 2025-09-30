@@ -1,6 +1,0 @@
-kind: Project
-apiVersion: project.openshift.io/v1
-metadata:
-  name: cdb
-  labels:
-    openshift.io/user-monitoring: 'true'
