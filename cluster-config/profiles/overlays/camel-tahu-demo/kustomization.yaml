@@ -1,11 +1,9 @@
 namespace: openshift-gitops
 namePrefix: camel-tahu-demo-
-
 resources:
-- ../../base/
-- ../../../argocd/amq-broker/
-- ../../../argocd/streams-kafka/
-
+  - ../../base/
+  - ../../../argocd/amq-broker/
+  - ../../../argocd/streams-kafka/
 patches:
   - target:
       version: v1alpha1

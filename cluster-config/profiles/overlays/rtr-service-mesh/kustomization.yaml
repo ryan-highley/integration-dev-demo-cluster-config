@@ -1,6 +1,5 @@
 namespace: openshift-gitops
 namePrefix: rtr-service-mesh-
-
 resources:
   - ../../base/
   - ../../../argocd/streams-kafka/
@@ -8,7 +7,6 @@ resources:
   - ../../../argocd/edb/
   - ../../../argocd/service-mesh/
   - ../../../argocd/vault-secrets/
-
 patches:
   - target:
       version: v1alpha1

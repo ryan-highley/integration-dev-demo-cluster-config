@@ -1,6 +1,5 @@
 namespace: openshift-gitops
 namePrefix: multi-tenant-kafka-
-
 resources:
   - ../../base/
   - ../../../argocd/amq-broker/
@@ -10,7 +9,6 @@ resources:
   # - ../../../argocd/service-mesh/
   - ../../../argocd/keycloak/
   # - ../../../argocd/vault-secrets/
-
 patches:
   - target:
       version: v1alpha1

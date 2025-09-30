@@ -5,9 +5,9 @@ metadata:
     app: 3scale-api-management
     threescale_component: system
   name: system-database
-  namespace: {{ project_name }}
+  namespace: {? {project_name: ''} : ''}
 stringData:
-  DB_PASSWORD: {{ sysdb_password }}
-  DB_USER: {{ sysdb_user }}
-  URL: {{ sysdb_url }}
+  DB_PASSWORD: {? {sysdb_password: ''} : ''}
+  DB_USER: {? {sysdb_user: ''} : ''}
+  URL: {? {sysdb_url: ''} : ''}
 type: Opaque

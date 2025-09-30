@@ -1,2 +1,2 @@
 resources:
-- Subscription_cockroachdb-certified.yaml
+  - Subscription_cockroachdb-certified.yaml
