@@ -1,3 +1,0 @@
-resources:
-- Keycloak_keycloak.yaml
-- Certificate_keycloak-tls-secret.yaml

@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: cert-manager
   source:
-    path: apps/cert-manager/overlays/default
+    path: app-config/manifests/cert-manager
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
     # targetRevision: HEAD
   syncPolicy:

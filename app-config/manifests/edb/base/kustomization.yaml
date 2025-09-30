@@ -1,4 +1,0 @@
-resources:
-- _Project_edb.yaml
-- Cluster_cluster.yaml
-- ServiceEntry_edb-cluster-operator-se.yaml

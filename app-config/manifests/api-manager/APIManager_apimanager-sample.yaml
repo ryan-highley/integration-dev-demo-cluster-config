@@ -3,4 +3,4 @@ kind: APIManager
 metadata:
   name: apimanager-sample
 spec:
-  wildcardDomain: apps.cluster-6qxsq.6qxsq.sandbox2273.opentlc.com
+  wildcardDomain: example.com

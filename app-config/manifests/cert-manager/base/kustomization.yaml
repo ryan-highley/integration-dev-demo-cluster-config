@@ -1,4 +1,0 @@
-resources:
-- ClusterIssuer_self-signer.yaml
-- Certificate_rootca.yaml
-- ClusterIssuer_signer.yaml

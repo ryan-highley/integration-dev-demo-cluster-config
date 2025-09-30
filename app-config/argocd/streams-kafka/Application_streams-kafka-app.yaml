@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: streams-kafka
   source:
-    path: apps/streams-kafka/overlays/multi-tenant-kafka
+    path: app-config/manifests/streams-kafka
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
     # targetRevision: HEAD
   syncPolicy:

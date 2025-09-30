@@ -5,7 +5,7 @@ bases:
 - ../../../applications/api-manager/
 - ../../../applications/demo-weather-interface/
 
-patchesJson6902:
+patches:
   - target:
       version: v1alpha1
       group: argoproj.io

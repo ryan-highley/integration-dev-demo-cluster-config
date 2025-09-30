@@ -1,8 +1,0 @@
-bases:
-- ../../base
-
-namespace: ignition-platform
-namePrefix: dev-
-
-commonLabels:
-  variant: DEV

@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: demo-weather-interface
   source:
-    path: apps/demo-weather-interface/overlays/dev
+    path: app-config/manifests/demo-weather-interface
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
     # targetRevision: HEAD
   syncPolicy:

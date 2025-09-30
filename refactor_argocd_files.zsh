@@ -7,7 +7,7 @@ for kustfile in `find . -name kustomization.yaml` ; do
     dir=`dirname ${kustfile}`
     echo Processing ${dir}...
     pushd ${dir}
-    for otherfile in `ls ^kustomization.yaml` ; do
+    for otherfile in `ls *.yaml~kustomization.yaml` ; do
         name=`yq '.metadata.name' ${otherfile}`
         kind=`yq '.kind' ${otherfile}`
         yamlfile="${kind}_${name}.yaml"

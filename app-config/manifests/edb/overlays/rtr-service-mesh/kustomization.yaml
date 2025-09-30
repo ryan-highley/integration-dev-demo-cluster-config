@@ -1,13 +1,10 @@
 namespace: rtr-app-edb
 namePrefix: rtr-app-
-
 resources:
-- ../../base
-- OperatorGroup_cloud-native-postgresql.yaml
-- ../../../../manifests/edb
-
+  - ../../base
+  - OperatorGroup_cloud-native-postgresql.yaml
+  - ../../../../manifests/edb
 patches:
-
   # Correct controller manager ConfigMap name to remove namePrefix
   - target:
       version: v1
@@ -19,7 +16,6 @@ patches:
         value: postgresql-operator-controller-manager-config
     options:
       allowNameChange: true
-
   # Set EDB namespace to be Service Mesh-enabled
   - target:
       group: project.openshift.io
@@ -30,7 +26,6 @@ patches:
       - op: add
         path: /metadata/labels/service-mesh-name
         value: basic
-
   # Set the correct ServiceEntry hostnames
   - target:
       group: networking.istio.io

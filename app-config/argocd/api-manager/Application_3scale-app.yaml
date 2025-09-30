@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: api-manager
   source:
-    path: apps/api-manager/overlays/dev
+    path: app-config/manifests/api-manager/base
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
     # targetRevision: HEAD
   syncPolicy:
