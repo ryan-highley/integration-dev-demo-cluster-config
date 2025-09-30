@@ -1,0 +1,28 @@
+# namespace: openshift-gitops
+# namePrefix: refactor-gitops-
+
+# resources:
+#   - ../../base/
+#   - ../../../argocd/rbac/
+
+patches:
+  - target:
+      kind: Application
+      group: argoproj.io
+      version: v1alpha1
+    patch: |-
+      - op: replace
+        path: /spec/source/targetRevision
+        value: refactor-gitops
+  # - op: replace
+  #   path: /spec/project
+  #   value: refactor-gitops-cluster-config
+  # - target:
+  #     kind: Application
+  #     group: argoproj.io
+  #     version: v1alpha1
+  #     name: cluster-config
+  #   patch: |-
+  #     - op: replace
+  #       path: /spec/source/path
+  #       value: cluster-config/profiles/overlays/refactor-gitops

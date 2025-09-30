@@ -8,9 +8,9 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: cluster-config/profiles/default/base
+    path: cluster-config/profiles/base
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
-    # # targetRevision: HEAD
+    # targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true

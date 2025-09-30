@@ -1,10 +1,14 @@
 namespace: openshift-gitops
-namePrefix: camel-tahu-demo-
+namePrefix: rtr-service-mesh-
 
 resources:
-- ../../default/base/
-- ../../../argocd/amq-broker/
-- ../../../argocd/streams-kafka/
+  - ../../base/
+  - ../../../argocd/rbac/
+  - ../../../argocd/streams-kafka/
+  - ../../../argocd/cockroachdb/
+  - ../../../argocd/edb/
+  - ../../../argocd/service-mesh/
+  - ../../../argocd/vault-secrets/
 
 patches:
   - target:
@@ -14,7 +18,7 @@ patches:
     patch: |-
       - op: replace
         path: /spec/project
-        value: camel-tahu-demo-cluster-config
+        value: rtr-service-mesh-cluster-config
   - target:
       version: v1alpha1
       group: argoproj.io
@@ -23,4 +27,4 @@ patches:
     patch: |-
       - op: replace
         path: /spec/source/path
-        value: cluster-config/profiles/camel-tahu-demo/base
+        value: cluster-config/profiles/overlays/rtr-service-mesh

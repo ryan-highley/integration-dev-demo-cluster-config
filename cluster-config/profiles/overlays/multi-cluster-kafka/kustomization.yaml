@@ -2,14 +2,15 @@ namespace: openshift-gitops
 namePrefix: multi-cluster-kafka-
 
 resources:
-- ../../default/base/
-- ../../../argocd/amq-broker/
-- ../../../argocd/streams-kafka/
-# - ../../../argocd/apicurio-registry/
-- ../../../argocd/cert-manager/
-# - ../../../argocd/service-mesh/
-- ../../../argocd/keycloak/
-# - ../../../argocd/vault-secrets/
+  - ../../base/
+  - ../../../argocd/rbac/
+  - ../../../argocd/amq-broker/
+  - ../../../argocd/streams-kafka/
+  # - ../../../argocd/apicurio-registry/
+  - ../../../argocd/cert-manager/
+  # - ../../../argocd/service-mesh/
+  - ../../../argocd/keycloak/
+  # - ../../../argocd/vault-secrets/
 
 patches:
   - target:
@@ -28,4 +29,4 @@ patches:
     patch: |-
       - op: replace
         path: /spec/source/path
-        value: cluster-config/profiles/multi-cluster-kafka/base
+        value: cluster-config/profiles/overlays/multi-cluster-kafka
