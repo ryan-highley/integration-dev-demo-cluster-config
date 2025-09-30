@@ -4,6 +4,7 @@ metadata:
   labels:
     operators.coreos.com/rhbk-operator.keycloak: ''
   name: rhbk-operator
+  namespace: keycloak
 spec:
   channel: stable-v26.2
   installPlanApproval: Automatic
