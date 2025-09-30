@@ -1,5 +1,7 @@
 namespace: openshift-gitops
 
 resources:
-- cluster-config-project.yaml
-- cluster-config.yaml
+  - cluster-config-project.yaml
+  - cluster-config.yaml
+  - ../../argocd/rbac/
+  - ../../argocd/htpass-auth/

@@ -3,7 +3,6 @@ namePrefix: rtr-service-mesh-
 
 resources:
   - ../../base/
-  - ../../../argocd/rbac/
   - ../../../argocd/streams-kafka/
   - ../../../argocd/cockroachdb/
   - ../../../argocd/edb/

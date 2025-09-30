@@ -3,7 +3,6 @@ namePrefix: multi-tenant-kafka-
 
 resources:
   - ../../base/
-  - ../../../argocd/rbac/
   - ../../../argocd/amq-broker/
   - ../../../argocd/streams-kafka/
   - ../../../argocd/apicurio-registry/
