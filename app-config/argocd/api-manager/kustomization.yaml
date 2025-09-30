@@ -1,5 +1,4 @@
 namespace: openshift-gitops
-
 resources:
-- api-manager-project.yaml
-- 3scale-app.yaml
+  - AppProject_api-manager.yaml
+  - Application_3scale-app.yaml

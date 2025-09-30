@@ -1,5 +1,4 @@
 namespace: openshift-gitops
-
 resources:
-- demo-weather-interface-project.yaml
-- demo-weather-interface-app.yaml
+  - AppProject_demo-weather-interface.yaml
+  - Application_demo-weather-interface-app.yaml

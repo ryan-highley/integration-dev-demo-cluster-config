@@ -1,5 +1,4 @@
 namespace: openshift-gitops
-
 resources:
-- keycloak-project.yaml
-- keycloak-app.yaml
+  - AppProject_keycloak.yaml
+  - Application_keycloak-app.yaml

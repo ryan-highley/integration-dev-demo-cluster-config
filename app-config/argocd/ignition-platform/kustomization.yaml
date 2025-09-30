@@ -1,5 +1,4 @@
 namespace: openshift-gitops
-
 resources:
-- ignition-platform-project.yaml
-- ignition-platform-app.yaml
+  - AppProject_ignition-platform.yaml
+  - Application_ignition-platform-app.yaml
