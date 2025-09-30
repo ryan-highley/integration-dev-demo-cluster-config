@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: manifests/security/rbac
+    path: cluster-config/manifests/security/rbac
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
     # targetRevision: HEAD
   syncPolicy:

@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: manifests/operators/streams-kafka
+    path: cluster-config/manifests/operators/streams-kafka
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
     # targetRevision: HEAD
   syncPolicy:

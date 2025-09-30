@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: cluster-config
   source:
-    path: manifests/operators/api-management
+    path: cluster-config/manifests/operators/api-management
     repoURL: https://github.com/ryan-highley/integration-dev-demo-cluster-config
     # targetRevision: HEAD
   syncPolicy:
