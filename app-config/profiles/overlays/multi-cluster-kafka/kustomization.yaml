@@ -4,3 +4,12 @@ resources:
   - ../../../argocd/keycloak/
   - movies-app/
   - music-app/
+
+patches:
+  - target:
+      kind: Keycloak
+      name: keycloak
+    patch: |-
+      - op: replace
+        path: /spec/hostname/hostname
+        value: keycloak-service.keycloak.apps.rrt19kxg.eastus.aroapp.io
