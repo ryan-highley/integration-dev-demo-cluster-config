@@ -41,8 +41,19 @@ patches:
   - target:
       version: v1alpha1
       group: argoproj.io
+      kind: AppProject
+    patch: |-
+      - op: replace
+        path: /metadata/namespace
+        value: openshift-gitops
+  - target:
+      version: v1alpha1
+      group: argoproj.io
       kind: Application
     patch: |-
       - op: replace
         path: /spec/project
         value: multi-cluster-kafka-app-config
+      - op: replace
+        path: /metadata/namespace
+        value: openshift-gitops
