@@ -1,7 +1,5 @@
 resources:
   - ../../base/
-  - ../../../argocd/cert-manager/
-  - ../../../argocd/keycloak/
   - movies-app/
   - music-app/
 

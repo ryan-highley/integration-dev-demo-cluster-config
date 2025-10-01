@@ -1,0 +1,25 @@
+resources:
+  - ../../../argocd/cert-manager/
+  - ../../../argocd/keycloak/
+  - ../multi-cluster-kafka
+
+patches:
+  - target:
+      kind: Application
+      group: argoproj.io
+      version: v1alpha1
+      name: keycloak-app
+    patch: |-
+      - op: add
+        path: /spec/source/kustomize
+        value: {}
+      - op: add
+        path: /spec/source/kustomize/patches
+        value:
+          - target:
+              kind: Keycloak
+              name: keycloak
+            patch: |-
+              - op: replace
+                path: /spec/hostname/hostname
+                value: keycloak-service-keycloak.apps.rrt19kxg.eastus.aroapp.io
