@@ -31,6 +31,9 @@ patches:
       name: app-config
     patch: |-
       - op: replace
+        path: /spec/project
+        value: multi-cluster-kafka-app-config
+      - op: replace
         path: /spec/source/path
         value: app-config/profiles/overlays/multi-cluster-kafka
       - op: replace
@@ -51,9 +54,6 @@ patches:
       group: argoproj.io
       kind: Application
     patch: |-
-      - op: replace
-        path: /spec/project
-        value: multi-cluster-kafka-app-config
       - op: replace
         path: /metadata/namespace
         value: openshift-gitops
