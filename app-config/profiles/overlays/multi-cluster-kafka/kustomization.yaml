@@ -1,5 +1,6 @@
-
+namePrefix: multi-cluster-kafka-
 resources:
+  - ../../base/
   - ../../../argocd/cert-manager/
   - ../../../argocd/keycloak/
   - movies-app/
@@ -13,3 +14,20 @@ patches:
       - op: replace
         path: /spec/hostname/hostname
         value: keycloak-service.keycloak.apps.rrt19kxg.eastus.aroapp.io
+  - target:
+      version: v1alpha1
+      group: argoproj.io
+      kind: Application
+    patch: |-
+      - op: replace
+        path: /spec/project
+        value: multi-cluster-kafka-app-config
+  - target:
+      version: v1alpha1
+      group: argoproj.io
+      kind: Application
+      name: app-config
+    patch: |-
+      - op: replace
+        path: /spec/source/path
+        value: app-config/profiles/overlays/multi-cluster-kafka
