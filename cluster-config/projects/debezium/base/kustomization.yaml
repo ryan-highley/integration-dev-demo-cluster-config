@@ -1,0 +1,17 @@
+namespace: openshift-gitops
+namePrefix: debezium-
+
+resources:
+- ../../default/base/
+- ../../../applications/streams-kafka/
+- ../../../applications/cert-manager/
+
+patches:
+  - target:
+      version: v1alpha1
+      group: argoproj.io
+      kind: Application
+    patch: |-
+      - op: replace
+        path: /spec/project
+        value: debezium-cluster-config
