@@ -2,3 +2,5 @@ namespace: openshift-gitops
 
 resources:
 - Application_cockroachdb.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

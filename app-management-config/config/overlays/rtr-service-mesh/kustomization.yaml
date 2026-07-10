@@ -8,47 +8,49 @@ resources:
 - ../../../applications/edb/
 
 patches:
-  - target:
-      version: v1alpha1
-      group: argoproj.io
-      kind: Application
-    patch: |-
-      - op: replace
-        path: /spec/project
-        value: rtr-app-config-service-mesh
-  - target:
-      version: v1alpha1
-      group: argoproj.io
-      kind: Application
-      name: service-mesh
-    patch: |-
-      - op: replace
-        path: /spec/destination/namespace
-        value: rtr-app-service-mesh
-      - op: replace
-        path: /spec/source/path
-        value: apps/service-mesh/overlays/rtr-service-mesh
-  - target:
-      version: v1alpha1
-      group: argoproj.io
-      kind: Application
-      name: cockroachdb
-    patch: |-
-      - op: replace
-        path: /spec/destination/namespace
-        value: rtr-app-cdb
-      - op: replace
-        path: /spec/source/path
-        value: apps/cockroachdb/overlays/rtr-service-mesh
-  - target:
-      version: v1alpha1
-      group: argoproj.io
-      kind: Application
-      name: edb
-    patch: |-
-      - op: replace
-        path: /spec/destination/namespace
-        value: rtr-app-edb
-      - op: replace
-        path: /spec/source/path
-        value: apps/edb/overlays/rtr-service-mesh
+- patch: |-
+    - op: replace
+      path: /spec/project
+      value: rtr-app-config-service-mesh
+  target:
+    group: argoproj.io
+    kind: Application
+    version: v1alpha1
+- patch: |-
+    - op: replace
+      path: /spec/destination/namespace
+      value: rtr-app-service-mesh
+    - op: replace
+      path: /spec/source/path
+      value: apps/service-mesh/overlays/rtr-service-mesh
+  target:
+    group: argoproj.io
+    kind: Application
+    name: service-mesh
+    version: v1alpha1
+- patch: |-
+    - op: replace
+      path: /spec/destination/namespace
+      value: rtr-app-cdb
+    - op: replace
+      path: /spec/source/path
+      value: apps/cockroachdb/overlays/rtr-service-mesh
+  target:
+    group: argoproj.io
+    kind: Application
+    name: cockroachdb
+    version: v1alpha1
+- patch: |-
+    - op: replace
+      path: /spec/destination/namespace
+      value: rtr-app-edb
+    - op: replace
+      path: /spec/source/path
+      value: apps/edb/overlays/rtr-service-mesh
+  target:
+    group: argoproj.io
+    kind: Application
+    name: edb
+    version: v1alpha1
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

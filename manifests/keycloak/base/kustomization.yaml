@@ -4,3 +4,5 @@ resources:
 - Namespace_keycloak.yaml
 - OperatorGroup_keycloak.yaml
 - Subscription_rhbk-operator.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

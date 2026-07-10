@@ -5,3 +5,5 @@ resources:
 - Project_openshift-opentelemetry-operator.yaml
 - OperatorGroup_openshift-opentelemetry-operator.yaml
 - Subscription_opentelemetry-product.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

@@ -2,3 +2,5 @@ resources:
 - _Project_istio-system.yaml
 - ServiceMeshControlPlane_default.yaml
 - ServiceMeshMemberRoll_default.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

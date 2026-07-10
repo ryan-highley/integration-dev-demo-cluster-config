@@ -3,3 +3,5 @@ resources:
 - KafkaUser_registry.yaml
 - ApicurioRegistry_registry.yaml
 - Route_registry.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

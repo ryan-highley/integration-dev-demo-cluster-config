@@ -2,3 +2,5 @@ resources:
 - Namespace_cert-manager-operator.yaml
 - OperatorGroup_cert-manager-operator.yaml
 - Subscription_cert-manager-subscription.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

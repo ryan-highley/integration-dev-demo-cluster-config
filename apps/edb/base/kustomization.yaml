@@ -2,3 +2,5 @@ resources:
 - _Project_edb.yaml
 - Cluster_cluster.yaml
 - ServiceEntry_edb-cluster-operator-se.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

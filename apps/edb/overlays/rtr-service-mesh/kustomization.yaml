@@ -6,38 +6,40 @@ resources:
 - OperatorGroup_cloud-native-postgresql.yaml
 - ../../../../manifests/edb
 
-patches:
 
   # Correct controller manager ConfigMap name to remove namePrefix
-  - target:
-      version: v1
-      kind: ConfigMap
-      name: postgresql-operator-controller-manager-config
-    patch: |-
-      - op: replace
-        path: /metadata/name
-        value: postgresql-operator-controller-manager-config
-    options:
-      allowNameChange: true
 
   # Set EDB namespace to be Service Mesh-enabled
-  - target:
-      group: project.openshift.io
-      version: v1
-      kind: Project
-      name: edb
-    patch: |-
-      - op: add
-        path: /metadata/labels/service-mesh-name
-        value: basic
 
   # Set the correct ServiceEntry hostnames
-  - target:
-      group: networking.istio.io
-      version: v1beta1
-      kind: ServiceEntry
-      name: edb-cluster-operator-se
-    patch: |-
-      - op: add
-        path: /spec/hosts/0
-        value: "postgresql-operator-controller-manager-service.rtr-app-edb.svc"
+patches:
+- options:
+    allowNameChange: true
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: postgresql-operator-controller-manager-config
+  target:
+    kind: ConfigMap
+    name: postgresql-operator-controller-manager-config
+    version: v1
+- patch: |-
+    - op: add
+      path: /metadata/labels/service-mesh-name
+      value: basic
+  target:
+    group: project.openshift.io
+    kind: Project
+    name: edb
+    version: v1
+- patch: |-
+    - op: add
+      path: /spec/hosts/0
+      value: "postgresql-operator-controller-manager-service.rtr-app-edb.svc"
+  target:
+    group: networking.istio.io
+    kind: ServiceEntry
+    name: edb-cluster-operator-se
+    version: v1beta1
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

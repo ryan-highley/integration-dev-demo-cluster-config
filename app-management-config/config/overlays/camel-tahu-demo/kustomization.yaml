@@ -6,18 +6,20 @@ resources:
 - ../../../applications/ignition-platform/
 
 patches:
-  - target:
-      version: v1alpha1
-      group: argoproj.io
-      kind: Application
-      name: ignition-platform-app
-    patch: |-
-      - op: replace
-        path: /spec/destination/namespace
-        value: dev-demo-weather-interface
-      - op: replace
-        path: /spec/project
-        value: dev-demo-weather-interface
-      - op: replace
-        path: /spec/source/path
-        value: apps/demo-weather-interface/overlays/camel-tahu-demo
+- patch: |-
+    - op: replace
+      path: /spec/destination/namespace
+      value: dev-demo-weather-interface
+    - op: replace
+      path: /spec/project
+      value: dev-demo-weather-interface
+    - op: replace
+      path: /spec/source/path
+      value: apps/demo-weather-interface/overlays/camel-tahu-demo
+  target:
+    group: argoproj.io
+    kind: Application
+    name: ignition-platform-app
+    version: v1alpha1
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

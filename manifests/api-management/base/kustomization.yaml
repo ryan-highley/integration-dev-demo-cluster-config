@@ -1,4 +1,4 @@
 resources:
 - 3scale-operator-subscription.yaml
-# - system-database-template.yaml
-# - zync-database-template.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

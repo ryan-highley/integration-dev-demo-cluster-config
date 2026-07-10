@@ -6,3 +6,5 @@ resources:
 - DestinationRule_kiali-disable-mtls.yaml
 - DestinationRule_otel-disable-mtls.yaml
 - DestinationRule_tempo-disable-mtls.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

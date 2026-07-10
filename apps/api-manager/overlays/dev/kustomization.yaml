@@ -4,13 +4,17 @@ resources:
 namespace: dev-3scale
 namePrefix: dev-
 
-commonLabels:
-  variant: DEV
 
-patchesJson6902:
-  - target:
-      version: v1alpha1
-      group: apps.3scale.net
-      kind: APIManager
-      name: apimanager-sample
-    path: patch-wildcard-domain.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+labels:
+- includeSelectors: true
+  pairs:
+    variant: DEV
+patches:
+- path: patch-wildcard-domain.yaml
+  target:
+    group: apps.3scale.net
+    kind: APIManager
+    name: apimanager-sample
+    version: v1alpha1

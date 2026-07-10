@@ -8,3 +8,5 @@ resources:
 - demo-weather-in-job.yaml
 - demo-weather-transform-deployment.yaml
 - demo-weather-sparkplug-deployment.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

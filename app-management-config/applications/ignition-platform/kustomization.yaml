@@ -3,3 +3,5 @@ namespace: openshift-gitops
 resources:
 - ignition-platform-project.yaml
 - ignition-platform-app.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

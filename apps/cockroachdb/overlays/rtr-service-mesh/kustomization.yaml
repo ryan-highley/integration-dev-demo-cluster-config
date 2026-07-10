@@ -4,26 +4,28 @@ namePrefix: rtr-app-
 resources:
 - ../../base
 
-patches:
 
   # Set CDB namespace to be Service Mesh-enabled
-  - target:
-      group: project.openshift.io
-      version: v1
-      kind: Project
-      name: cdb
-    patch: |-
-      - op: add
-        path: /metadata/labels/service-mesh-name
-        value: basic
 
   # Set the correct ServiceEntry hostnames
-  - target:
-      group: networking.istio.io
-      version: v1beta1
-      kind: ServiceEntry
-      name: cockroachdb-se
-    patch: |-
-      - op: add
-        path: /spec/hosts/0
-        value: "*.rtr-app-cdb.rtr-app-cdb.svc"
+patches:
+- patch: |-
+    - op: add
+      path: /metadata/labels/service-mesh-name
+      value: basic
+  target:
+    group: project.openshift.io
+    kind: Project
+    name: cdb
+    version: v1
+- patch: |-
+    - op: add
+      path: /spec/hosts/0
+      value: "*.rtr-app-cdb.rtr-app-cdb.svc"
+  target:
+    group: networking.istio.io
+    kind: ServiceEntry
+    name: cockroachdb-se
+    version: v1beta1
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

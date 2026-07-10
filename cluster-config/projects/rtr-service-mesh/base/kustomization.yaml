@@ -10,20 +10,22 @@ resources:
 - ../../../applications/vault-secrets/
 
 patches:
-  - target:
-      version: v1alpha1
-      group: argoproj.io
-      kind: Application
-    patch: |-
-      - op: replace
-        path: /spec/project
-        value: rtr-service-mesh-cluster-config
-  - target:
-      version: v1alpha1
-      group: argoproj.io
-      kind: Application
-      name: cluster-config
-    patch: |-
-      - op: replace
-        path: /spec/source/path
-        value: cluster-config/projects/rtr-service-mesh/base
+- patch: |-
+    - op: replace
+      path: /spec/project
+      value: rtr-service-mesh-cluster-config
+  target:
+    group: argoproj.io
+    kind: Application
+    version: v1alpha1
+- patch: |-
+    - op: replace
+      path: /spec/source/path
+      value: cluster-config/projects/rtr-service-mesh/base
+  target:
+    group: argoproj.io
+    kind: Application
+    name: cluster-config
+    version: v1alpha1
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

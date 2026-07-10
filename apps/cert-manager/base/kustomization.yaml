@@ -2,3 +2,5 @@ resources:
 - ClusterIssuer_self-signer.yaml
 - Certificate_rootca.yaml
 - ClusterIssuer_signer.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

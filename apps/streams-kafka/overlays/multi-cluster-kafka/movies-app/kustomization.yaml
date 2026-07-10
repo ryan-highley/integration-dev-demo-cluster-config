@@ -10,20 +10,24 @@ resources:
 - KafkaTopic_stunts.yaml
 - KafkaUser_movies-app-client.yaml
 
-commonLabels:
-  strimzi.io/cluster: broker
 
 patches:
-  - target:
-      kind: Certificate
-      name: broker-listeners
-    patch: |-
-      - op: replace
-        path: /spec/dnsNames
-        value:
-          - '*.broker-kafka-brokers'
-          - '*.broker-kafka-brokers.movies-app-kafka.svc'
-          - '*.broker-kafka-brokers.movies-app-kafka.svc.cluster.local'
-          - broker-kafka-bootstrap
-          - broker-kafka-bootstrap.movies-app-kafka.svc
-          - broker-kafka-bootstrap.movies-app-kafka.svc.cluster.local
+- patch: |-
+    - op: replace
+      path: /spec/dnsNames
+      value:
+        - '*.broker-kafka-brokers'
+        - '*.broker-kafka-brokers.movies-app-kafka.svc'
+        - '*.broker-kafka-brokers.movies-app-kafka.svc.cluster.local'
+        - broker-kafka-bootstrap
+        - broker-kafka-bootstrap.movies-app-kafka.svc
+        - broker-kafka-bootstrap.movies-app-kafka.svc.cluster.local
+  target:
+    kind: Certificate
+    name: broker-listeners
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+labels:
+- includeSelectors: true
+  pairs:
+    strimzi.io/cluster: broker

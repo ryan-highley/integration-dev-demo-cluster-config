@@ -3,3 +3,5 @@ namespace: streams-platform
 resources:
 - Namespace_streams-platform.yaml
 - ../../base
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

@@ -4,14 +4,16 @@ namePrefix: rtr-app-
 resources:
 - ../../../../manifests/cockroachdb/overlays/separate-operator-namespace
 
-patches:
   # Set the OperatorGroup to watch the cdb namespace
-  - target:
-      group: operators.coreos.com
-      version: v1
-      kind: OperatorGroup
-      name: cockroachdb-certified-og
-    patch: |-
-      - op: add
-        path: /spec/targetNamespaces/0
-        value: rtr-app-cdb
+patches:
+- patch: |-
+    - op: add
+      path: /spec/targetNamespaces/0
+      value: rtr-app-cdb
+  target:
+    group: operators.coreos.com
+    kind: OperatorGroup
+    name: cockroachdb-certified-og
+    version: v1
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

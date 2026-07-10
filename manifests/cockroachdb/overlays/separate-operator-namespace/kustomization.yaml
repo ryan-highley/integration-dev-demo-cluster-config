@@ -2,3 +2,5 @@ resources:
 - Project_cdb-operator.yaml
 - OperatorGroup_cockroachdb-certified-og.yaml
 - ../../base
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
